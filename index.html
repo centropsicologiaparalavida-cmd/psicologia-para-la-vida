@@ -66,16 +66,22 @@ section{padding:65px 5%}.container{max-width:1150px;margin:auto}.title{text-alig
 <div class="card"><div class="icon">👨‍👩‍👧</div><h3>Orientación familiar</h3><p>Herramientas para mejorar comunicación, límites y vínculos familiares.</p></div>
 </div></div></section>
 
-<section id="blog" class="blog"><div class="container two">
-<div><h2 class="title" style="text-align:left">Blog para la Vida</h2><p>Consejos y herramientas prácticas para acompañar a tus hijos en su desarrollo.</p><a class="btn orange" href="#">Ir al blog</a></div>
+<section id="blog" class="blog">
+<div class="container two">
+
 <div>
-<div class="post"><div class="thumb"></div><div><h3>Cómo gestionar las emociones de nuestros hijos</h3><a href="#">Leer más →</a></div></div>
-<div class="post"><div class="thumb"></div><div><h3>Límites con amor: claves para educar</h3><a href="#">Leer más →</a></div></div>
-<div class="post"><div class="thumb"></div><div><h3>Estrategias para mejorar la atención y concentración</h3><a href="#">Leer más →</a></div></div>
-</div></div></section>
+<h2 class="title" style="text-align:left">Blog para la Vida</h2>
+<p>Consejos y herramientas prácticas para acompañar a tus hijos en su desarrollo.</p>
+</div>
 
+<div id="blog-posts">
+<p>Cargando artículos...</p>
+</div>
 
-<section id="recursos" class="store">
+</div>
+</section>
+
+<section id="recursos" class="resources">
 <div class="container">
 <h2 class="title">Recursos para la Vida</h2>
 <p class="subtitle">Materiales seleccionados para apoyar el aprendizaje, el desarrollo y el acompañamiento familiar.</p>
@@ -170,4 +176,68 @@ document.querySelectorAll(".filter").forEach(btn=>{
   });
 });
 </script>
-</body></html>
+<script>
+async function cargarBlog() {
+  const contenedor = document.getElementById("blog-posts");
+
+  try {
+    const respuesta = await fetch("https://api.github.com/repos/centropsicologiaparalavida-cmd/psicologia-para-la-vida/contents/_posts");
+
+    if (!respuesta.ok) {
+      throw new Error("No se pudieron cargar los artículos");
+    }
+
+    const archivos = await respuesta.json();
+
+    const posts = archivos
+      .filter(archivo => archivo.name.endsWith(".md"))
+      .sort((a, b) => b.name.localeCompare(a.name));
+
+    if (posts.length === 0) {
+      contenedor.innerHTML = "<p>Aún no hay artículos publicados.</p>";
+      return;
+    }
+
+    contenedor.innerHTML = "";
+
+    for (const archivo of posts) {
+      const contenido = await fetch(archivo.download_url).then(r => r.text());
+
+      const tituloMatch = contenido.match(/title:\s*["']?(.*?)["']?\s*(?:\n|$)/i);
+      const fechaMatch = contenido.match(/date:\s*["']?(.*?)["']?\s*(?:\n|$)/i);
+
+      const titulo = tituloMatch
+        ? tituloMatch[1].trim()
+        : archivo.name.replace(".md", "").replace(/^\d{4}-\d{2}-\d{2}-/, "");
+
+      const fecha = fechaMatch ? fechaMatch[1].trim() : "";
+
+      const cuerpo = contenido
+        .replace(/^---[\s\S]*?---/, "")
+        .trim()
+        .replace(/[#*_]/g, "")
+        .substring(0, 180);
+
+      const post = document.createElement("div");
+      post.className = "post";
+
+      post.innerHTML = `
+        <div class="thumb">📝</div>
+        <div>
+          <h3>${titulo}</h3>
+          ${fecha ? `<small>${fecha}</small>` : ""}
+          <p>${cuerpo}...</p>
+        </div>
+      `;
+
+      contenedor.appendChild(post);
+    }
+
+  } catch (error) {
+    console.error(error);
+    contenedor.innerHTML = "<p>No se pudieron cargar los artículos en este momento.</p>";
+  }
+}
+
+cargarBlog();
+</script></body></html>
