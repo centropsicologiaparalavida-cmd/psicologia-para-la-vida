@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: centropsicologiaparalavida-cmd/psicologia-para-la-vida
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog para la Vida"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Imagen", name: "image", widget: "image", required: false}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+      - {label: "Contenido", name: "body", widget: "markdown"}
