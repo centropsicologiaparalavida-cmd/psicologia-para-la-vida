@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Blog para la Vida | Psicología para la Vida</title>
+
+<meta name="description" content="Artículos y herramientas prácticas de Psicología para la Vida para acompañar a niños, adolescentes y familias.">
+
+<style>
+:root{
+  --g:#718565;
+  --o:#f28b3c;
+  --d:#244c52;
+  --bg:#fbfaf5;
+  --gris:#65716d;
+}
+
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--d);
+  background:var(--bg);
+  line-height:1.7;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:10px 4%;
+  box-shadow:0 2px 12px #0001;
+  flex-wrap:wrap;
+}
+
+nav img{
+  width:145px;
+  margin-right:auto;
+}
+
+nav a{
+  color:var(--d);
+  text-decoration:none;
+  font-weight:600;
+  font-size:.9rem;
+}
+
+nav a:hover{
+  color:var(--o);
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.hero-blog{
+  background:linear-gradient(135deg,#eef3e9,#fff);
+  padding:75px 20px;
+  text-align:center;
+}
+
+.hero-blog h1{
+  font:500 clamp(2.2rem,5vw,3.6rem)/1.15 Georgia,serif;
+  color:var(--g);
+  margin:0 0 18px;
+}
+
+.hero-blog p{
+  max-width:760px;
+  margin:auto;
+  color:var(--gris);
+  font-size:1.08rem;
+}
+
+.categories{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:28px 20px;
+}
+
+.category{
+  padding:9px 16px;
+  border:1px solid var(--g);
+  border-radius:22px;
+  color:var(--g);
+  text-decoration:none;
+  font-weight:600;
+  background:#fff;
+}
+
+.category:hover{
+  background:var(--g);
+  color:#fff;
+}
+
+.posts{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  padding:45px 0 70px;
+}
+
+.post-card{
+  background:#fff;
+  border:1px solid #e5e9df;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 6px 20px #00000009;
+}
+
+.post-image{
+  height:190px;
+  background:#e8eee2;
+  display:grid;
+  place-items:center;
+  font-size:4rem;
+}
+
+.post-content{
+  padding:22px;
+}
+
+.post-category{
+  display:inline-block;
+  background:#eef3e9;
+  color:var(--g);
+  padding:4px 10px;
+  border-radius:12px;
+  font-size:.78rem;
+  font-weight:bold;
+}
+
+.post-card h2{
+  font:600 1.35rem Georgia,serif;
+  margin:12px 0 8px;
+  color:var(--d);
+}
+
+.post-card p{
+  font-size:.94rem;
+  color:var(--gris);
+}
+
+.post-date{
+  font-size:.82rem;
+  color:#8a9490;
+}
+
+.read{
+  display:inline-block;
+  margin-top:12px;
+  color:var(--g);
+  font-weight:bold;
+  text-decoration:none;
+}
+
+footer{
+  background:var(--g);
+  color:#fff;
+  text-align:center;
+  padding:25px;
+}
+
+@media(max-width:850px){
+  .posts{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:600px){
+  nav{
+    justify-content:center;
+  }
+
+  nav img{
+    margin:auto;
+  }
+
+  .posts{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<a href="../index.html">
+<img src="../logo_real.png" alt="Psicología para la Vida">
+</a>
+
+<a href="../index.html#inicio">Inicio</a>
+
+<a href="../index.html#sobre">Sobre mí</a>
+
+<a href="../index.html#servicios">Servicios</a>
+
+<a href="index.html">Blog para la Vida</a>
+
+<a href="../index.html#recursos">Recursos</a>
+
+<a href="../index.html#contacto">Contacto</a>
+
+</nav>
+
+
+<header class="hero-blog">
+
+<div class="container">
+
+<h1>Blog para la Vida</h1>
+
+<p>
+Consejos, orientación y herramientas prácticas para acompañar
+el desarrollo emocional, conductual y familiar en las diferentes
+etapas de la vida.
+</p>
+
+</div>
+
+</header>
+
+
+<div class="categories">
+
+<a class="category" href="index.html">Todos</a>
+
+<a class="category" href="#emociones">
+Emociones
+</a>
+
+<a class="category" href="#crianza">
+Crianza y límites
+</a>
+
+<a class="category" href="#atencion">
+Atención y aprendizaje
+</a>
+
+<a class="category" href="#familia">
+Familia
+</a>
+
+</div>
+
+
+<main class="container">
+
+<section class="posts">
+
+
+<article class="post-card" id="emociones">
+
+<div class="post-image">
+💚
+</div>
+
+<div class="post-content">
+
+<span class="post-category">
+Emociones
+</span>
+
+<h2>
+Cómo gestionar las emociones de nuestros hijos
+</h2>
+
+<div class="post-date">
+Blog para la Vida
+</div>
+
+<p>
+Una guía inicial para acompañar a los niños cuando sienten
+emociones intensas, ayudándoles a reconocer y expresar
+lo que sienten de manera adecuada.
+</p>
+
+<a class="read" href="emociones-en-los-ninos.html">
+Leer artículo →
+</a>
+
+</div>
+
+</article>
+
+
+<article class="post-card" id="crianza">
+
+<div class="post-image">
+🌱
+</div>
+
+<div class="post-content">
+
+<span class="post-category">
+Crianza y límites
+</span>
+
+<h2>
+Límites con amor: claves para educar
+</h2>
+
+<div class="post-date">
+Blog para la Vida
+</div>
+
+<p>
+Ideas para establecer límites claros, consistentes y
+respetuosos, favoreciendo la responsabilidad y la
+convivencia familiar.
+</p>
+
+<a class="read" href="limites-con-amor.html">
+Leer artículo →
+</a>
+
+</div>
+
+</article>
+
+
+<article class="post-card" id="atencion">
+
+<div class="post-image">
+🎯
+</div>
+
+<div class="post-content">
+
+<span class="post-category">
+Atención y aprendizaje
+</span>
+
+<h2>
+Estrategias para mejorar la atención y concentración
+</h2>
+
+<div class="post-date">
+Blog para la Vida
+</div>
+
+<p>
+Recomendaciones prácticas para organizar el ambiente,
+dar instrucciones y acompañar las tareas de manera
+más efectiva.
+</p>
+
+<a class="read" href="atencion-y-concentracion.html">
+Leer artículo →
+</a>
+
+</div>
+
+</article>
+
+
+<article class="post-card" id="familia">
+
+<div class="post-image">
+👨‍👩‍👧
+</div>
+
+<div class="post-content">
+
+<span class="post-category">
+Familia
+</span>
+
+<h2>
+Comunicación positiva en la familia
+</h2>
+
+<div class="post-date">
+Próximamente
+</div>
+
+<p>
+Ideas para favorecer una comunicación respetuosa,
+escuchar las necesidades de cada integrante y fortalecer
+los vínculos familiares.
+</p>
+
+<a class="read" href="#">
+Próximamente →
+</a>
+
+</div>
+
+</article>
+
+
+</section>
+
+</main>
+
+
+<footer>
+
+© 2026 Psicología para la Vida · Rosa María Caballero Sisniegas · Psicóloga
+
+</footer>
+
+</body>
+  </html>
