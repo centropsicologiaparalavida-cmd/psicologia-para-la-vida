@@ -163,34 +163,16 @@ section{padding:65px 5%}.container{max-width:1150px;margin:auto}.title{text-alig
 <a class="float" href="https://wa.me/51917913802" target="_blank" aria-label="WhatsApp">◔</a>
 
 <script>
-function consultarProducto(nombre){
+function consultarProducto(nombre) {
   const mensaje = encodeURIComponent(
     "Hola, quisiera consultar por el producto: " + nombre + "."
   );
+
   window.open(
     "https://wa.me/51917913802?text=" + mensaje,
     "_blank"
   );
 }
-
-document.querySelectorAll(".filter").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".filter").forEach(b =>
-      b.classList.remove("active")
-    );
-
-    btn.classList.add("active");
-
-    const filtro = btn.dataset.filter;
-
-    document.querySelectorAll(".product").forEach(p => {
-      p.classList.toggle(
-        "hidden",
-        filtro !== "todos" && p.dataset.category !== filtro
-      );
-    });
-  });
-});
 </script>
 
 <script>
