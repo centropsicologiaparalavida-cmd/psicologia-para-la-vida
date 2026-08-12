@@ -2,6 +2,7 @@ backend:
   name: github
   repo: centropsicologiaparalavida-cmd/psicologia-para-la-vida
   branch: main
+  site_domain: splendorous-haupia-3096b3.netlify.app
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
