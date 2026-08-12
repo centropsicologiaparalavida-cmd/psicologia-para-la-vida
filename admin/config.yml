@@ -17,15 +17,16 @@ collections:
       - {label: "Imagen", name: "image", widget: "image", required: false}
       - {label: "Fecha", name: "date", widget: "datetime"}
       - {label: "Contenido", name: "body", widget: "markdown"}
-- name: "recursos"
-  label: "Recursos para la Vida"
-  folder: "_recursos"
-  create: true
-  slug: "{{slug}}"
-  fields:
-  - {label: "Nombre del recurso", name: "title", widget: "string"}
-  - {label: "Imagen", name: "image", widget: "image", required: false}
-  - {label: "Categoría", name: "category", widget: "select", options: ["Libros didácticos", "Actividades", "Emociones", "Atención y concentración", "Otros"]}
-  - {label: "Descripción", name: "description", widget: "text"}
-  - {label: "Precio", name: "price", widget: "string", required: false}
-  - {label: "Mensaje de WhatsApp", name: "whatsapp", widget: "string", required: false}
+
+  - name: "recursos"
+    label: "Recursos para la Vida"
+    folder: "_recursos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre del recurso", name: "title", widget: "string"}
+      - {label: "Imagen", name: "image", widget: "image", required: false}
+      - {label: "Categoría", name: "category", widget: "select", options: ["Libros didácticos", "Actividades", "Emociones", "Atención y concentración"]}
+      - {label: "Descripción", name: "description", widget: "text", required: false}
+      - {label: "Precio", name: "price", widget: "string", required: false}
+      - {label: "Contenido", name: "body", widget: "markdown", required: false}
