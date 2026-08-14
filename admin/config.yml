@@ -8,26 +8,70 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+
   - name: "blog"
     label: "Blog para la Vida"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+
     fields:
-      - {label: "Título", name: "title", widget: "string"}
-      - {label: "Imagen", name: "image", widget: "image", required: false}
-      - {label: "Fecha", name: "date", widget: "datetime"}
-      - {label: "Contenido", name: "body", widget: "markdown"}
+      - label: "Título"
+        name: "title"
+        widget: "string"
+
+      - label: "Imagen"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "Fecha"
+        name: "date"
+        widget: "datetime"
+
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+
 
   - name: "recursos"
     label: "Recursos para la Vida"
     folder: "_recursos"
     create: true
     slug: "{{slug}}"
+
     fields:
-      - {label: "Nombre del recurso", name: "title", widget: "string"}
-      - {label: "Imagen", name: "image", widget: "image", required: false}
-      - {label: "Categoría", name: "category", widget: "select", options: ["Libros didácticos", "Actividades", "Emociones", "Atención y concentración"]}
-      - {label: "Descripción", name: "description", widget: "text", required: false}
-      - {label: "Precio", name: "price", widget: "string", required: false}
-      - {label: "Contenido", name: "body", widget: "markdown", required: false}
+
+      - label: "Nombre del recurso"
+        name: "title"
+        widget: "string"
+
+      - label: "Imagen"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "Categoría"
+        name: "category"
+        widget: "select"
+        options:
+          - "Emociones"
+          - "Desarrollo cognitivo y aprendizaje"
+          - "Lenguaje y comunicación"
+          - "Primera infancia y estimulación"
+          - "Estimulación y motricidad"
+
+      - label: "Descripción"
+        name: "description"
+        widget: "text"
+        required: false
+
+      - label: "Precio"
+        name: "price"
+        widget: "string"
+        required: false
+
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+        required: false
