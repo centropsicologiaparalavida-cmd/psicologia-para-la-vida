@@ -393,89 +393,60 @@ style="display:inline-block;background:white;color:#287c72;padding:14px 28px;bor
       y el acompañamiento familiar.
     </p>
 
-    <div class="products">
+    <!-- CATEGORÍAS -->
+    <div class="resource-categories">
 
-      <article class="product">
-        <div class="product-img">💛</div>
-        <div class="product-body">
-          <h3>Emociones y habilidades socioemocionales</h3>
-          <p>
-            Recursos para comprender, expresar y gestionar las emociones,
-            fortaleciendo la autoestima, la empatía y las habilidades para
-            relacionarse con los demás.
-          </p>
-          <button class="buy"
-            onclick="consultarProducto('Emociones y habilidades socioemocionales')">
-            Consultar por WhatsApp
-          </button>
-        </div>
-      </article>
+      <button class="resource-category"
+        onclick="mostrarRecursos('Emociones')">
+        <span>💛</span>
+        <strong>Emociones y habilidades socioemocionales</strong>
+        <small>Ver recursos</small>
+      </button>
 
-      <article class="product">
-        <div class="product-img">🧠</div>
-        <div class="product-body">
-          <h3>Desarrollo cognitivo y aprendizaje</h3>
-          <p>
-            Recursos para fortalecer la atención, memoria, pensamiento,
-            razonamiento y otras habilidades necesarias para aprender
-            de manera significativa.
-          </p>
-          <button class="buy"
-            onclick="consultarProducto('Desarrollo cognitivo y aprendizaje')">
-            Consultar por WhatsApp
-          </button>
-        </div>
-      </article>
+      <button class="resource-category"
+        onclick="mostrarRecursos('Desarrollo cognitivo y aprendizaje')">
+        <span>🧠</span>
+        <strong>Desarrollo cognitivo y aprendizaje</strong>
+        <small>Ver recursos</small>
+      </button>
 
-      <article class="product">
-        <div class="product-img">🗣️</div>
-        <div class="product-body">
-          <h3>Lenguaje y comunicación</h3>
-          <p>
-            Materiales orientados a favorecer el desarrollo del lenguaje,
-            la comprensión, la expresión oral y las habilidades comunicativas.
-          </p>
-          <button class="buy"
-            onclick="consultarProducto('Lenguaje y comunicación')">
-            Consultar por WhatsApp
-          </button>
-        </div>
-      </article>
+      <button class="resource-category"
+        onclick="mostrarRecursos('Lenguaje y comunicación')">
+        <span>🗣️</span>
+        <strong>Lenguaje y comunicación</strong>
+        <small>Ver recursos</small>
+      </button>
 
-      <article class="product">
-        <div class="product-img">👶</div>
-        <div class="product-body">
-          <h3>Primera infancia y estimulación</h3>
-          <p>
-            Recursos para acompañar el desarrollo integral de los niños
-            durante sus primeros años mediante experiencias de juego
-            y aprendizaje.
-          </p>
-          <button class="buy"
-            onclick="consultarProducto('Primera infancia y estimulación')">
-            Consultar por WhatsApp
-          </button>
-        </div>
-      </article>
+      <button class="resource-category"
+        onclick="mostrarRecursos('Primera infancia y estimulación')">
+        <span>👶</span>
+        <strong>Primera infancia y estimulación</strong>
+        <small>Ver recursos</small>
+      </button>
 
-      <article class="product">
-        <div class="product-img">✋</div>
-        <div class="product-body">
-          <h3>Estimulación y motricidad</h3>
-          <p>
-            Actividades destinadas a fortalecer la coordinación, el movimiento,
-            la motricidad fina y gruesa, favoreciendo un desarrollo activo
-            y saludable.
-          </p>
-          <button class="buy"
-            onclick="consultarProducto('Estimulación y motricidad')">
-            Consultar por WhatsApp
-          </button>
-        </div>
-      </article>
+      <button class="resource-category"
+        onclick="mostrarRecursos('Estimulación y motricidad')">
+        <span>✋</span>
+        <strong>Estimulación y motricidad</strong>
+        <small>Ver recursos</small>
+      </button>
 
     </div>
 
+    <!-- ARTÍCULOS -->
+    <div id="lista-recursos" class="resources-list" style="display:none;">
+
+      <button class="back-resources" onclick="cerrarRecursos()">
+        ← Volver a Recursos para la Vida
+      </button>
+
+      <h3 id="titulo-categoria"></h3>
+
+      <div id="recursos-contenido" class="products"></div>
+
+    </div>
+
+    <!-- CONSULTA -->
     <div class="resources-contact">
       <h3>¿Buscas un material específico?</h3>
 
@@ -495,6 +466,191 @@ style="display:inline-block;background:white;color:#287c72;padding:14px 28px;bor
 
   </div>
 </section>
+
+<script>
+async function mostrarRecursos(categoria) {
+
+  const categorias = document.querySelector(".resource-categories");
+  const lista = document.getElementById("lista-recursos");
+  const contenido = document.getElementById("recursos-contenido");
+  const titulo = document.getElementById("titulo-categoria");
+
+  categorias.style.display = "none";
+  lista.style.display = "block";
+
+  titulo.textContent = categoria;
+  contenido.innerHTML = "<p>Cargando recursos...</p>";
+
+  try {
+
+    const respuesta = await fetch(
+      "https://api.github.com/repos/centropsicologiaparalavida-cmd/psicologia-para-la-vida/contents/_recursos"
+    );
+
+    if (!respuesta.ok) {
+      throw new Error("No se pudo acceder a los recursos.");
+    }
+
+    const archivos = await respuesta.json();
+
+    const archivosMarkdown = archivos.filter(
+      archivo => archivo.name.endsWith(".md")
+    );
+
+    const recursos = [];
+
+    for (const archivo of archivosMarkdown) {
+
+      const respuestaArchivo = await fetch(archivo.download_url);
+
+      if (!respuestaArchivo.ok) {
+        continue;
+      }
+
+      const texto = await respuestaArchivo.text();
+
+      const datos = leerFrontMatter(texto);
+
+      let categoriaArticulo = datos.category || "";
+
+      if (
+        categoriaArticulo.toLowerCase() === categoria.toLowerCase() ||
+        (categoria === "Emociones" &&
+         categoriaArticulo.toLowerCase().includes("emociones"))
+      ) {
+        recursos.push(datos);
+      }
+    }
+
+    if (recursos.length === 0) {
+
+      contenido.innerHTML = `
+        <div class="no-resources">
+          <p>
+            Todavía no hay materiales publicados en esta categoría.
+          </p>
+          <p>
+            Próximamente encontrarás nuevos recursos aquí.
+          </p>
+        </div>
+      `;
+
+      return;
+    }
+
+    contenido.innerHTML = "";
+
+    recursos.forEach(function(recurso) {
+
+      let imagen = recurso.image || "";
+
+      if (imagen.startsWith("/")) {
+        imagen =
+          "https://splendorous-haupia-3096b3.netlify.app" + imagen;
+      }
+
+      const tarjeta = document.createElement("article");
+
+      tarjeta.className = "product";
+
+      tarjeta.innerHTML = `
+        ${
+          imagen
+          ? `<div class="product-img">
+               <img src="${imagen}" alt="${recurso.title || "Recurso"}">
+             </div>`
+          : `<div class="product-img">📚</div>`
+        }
+
+        <div class="product-body">
+
+          <h3>${recurso.title || "Recurso"}</h3>
+
+          ${
+            recurso.description
+            ? `<p>${recurso.description}</p>`
+            : ""
+          }
+
+          ${
+            recurso.price
+            ? `<p class="resource-price">${recurso.price}</p>`
+            : ""
+          }
+
+          <button
+            class="buy"
+            onclick="consultarProducto('${recurso.title || "Recurso"}')">
+            Consultar por WhatsApp
+          </button>
+
+        </div>
+      `;
+
+      contenido.appendChild(tarjeta);
+
+    });
+
+  } catch (error) {
+
+    contenido.innerHTML = `
+      <div class="no-resources">
+        <p>
+          No se pudieron cargar los recursos en este momento.
+        </p>
+      </div>
+    `;
+  }
+}
+
+
+function leerFrontMatter(texto) {
+
+  const resultado = {};
+
+  const partes = texto.split("---");
+
+  if (partes.length >= 3) {
+
+    const frontMatter = partes[1];
+
+    frontMatter.split("\n").forEach(function(linea) {
+
+      const posicion = linea.indexOf(":");
+
+      if (posicion === -1) {
+        return;
+      }
+
+      const clave = linea
+        .substring(0, posicion)
+        .trim();
+
+      let valor = linea
+        .substring(posicion + 1)
+        .trim();
+
+      valor = valor.replace(/^["']|["']$/g, "");
+
+      resultado[clave] = valor;
+
+    });
+  }
+
+  return resultado;
+}
+
+
+function cerrarRecursos() {
+
+  document.querySelector(".resource-categories").style.display = "grid";
+
+  document.getElementById("lista-recursos").style.display = "none";
+
+  document.getElementById("recursos-contenido").innerHTML = "";
+
+}
+</script>
 <section class="process"><div class="container"><h2 class="title">Nuestro proceso de atención</h2>
 <div class="steps">
 <div class="step"><div class="num">1</div><h3>Evaluación inicial</h3><p>Escuchamos tu historia y comprendemos tus necesidades.</p></div>
