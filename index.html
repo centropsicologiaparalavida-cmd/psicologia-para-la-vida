@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="utf-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Psicología para la Vida</title>
@@ -15,65 +14,42 @@
    VARIABLES GENERALES
 ========================================================= */
 
-:root {
-  --verde: #718565;
-  --verde2: #dfe9d8;
-  --verde-claro: #f0f4eb;
-
-  --naranja: #f28b3c;
-  --naranja-claro: #fff0e5;
-
-  --azul: #244c52;
-  --azul-claro: #eef7ff;
-
-  --turquesa: #287c72;
-  --turquesa-claro: #dff3ef;
-
-  --gris: #65716d;
-  --gris-claro: #e7ebe3;
-
-  --fondo: #fbfaf5;
-  --blanco: #ffffff;
-
-  --sombra: 0 6px 20px rgba(0,0,0,.06);
-  --sombra-grande: 0 10px 35px rgba(0,0,0,.10);
+:root{
+  --g:#718565;
+  --o:#f28b3c;
+  --d:#244c52;
+  --bg:#fbfaf5;
+  --verde:#718565;
+  --verde2:#dfe9d9;
+  --naranja:#f28b3c;
+  --gris:#65716d;
 }
 
 
 /* =========================================================
-   RESET
+   CONFIGURACIÓN GENERAL
 ========================================================= */
 
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
 }
 
-html {
-  scroll-behavior: smooth;
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--d);
+  background:var(--bg);
+  line-height:1.6;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--azul);
-  background: var(--fondo);
-  line-height: 1.6;
-}
-
-img {
-  max-width: 100%;
+img{
+  max-width:100%;
 }
 
 button,
-input,
-textarea,
-select {
-  font-family: inherit;
-}
-
-a {
-  color: inherit;
+a{
+  font-family:inherit;
 }
 
 
@@ -81,39 +57,33 @@ a {
    NAVEGACIÓN
 ========================================================= */
 
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  background: var(--blanco);
-
-  display: flex;
-  align-items: center;
-  gap: 22px;
-
-  padding: 10px 4%;
-
-  box-shadow: 0 2px 12px rgba(0,0,0,.07);
-
-  flex-wrap: wrap;
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  padding:10px 4%;
+  box-shadow:0 2px 12px #0001;
+  flex-wrap:wrap;
 }
 
-nav img {
-  width: 145px;
-  height: auto;
-  margin-right: auto;
+nav img{
+  width:145px;
+  margin-right:auto;
 }
 
-nav a {
-  color: var(--azul);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: .9rem;
+nav a{
+  color:var(--d);
+  text-decoration:none;
+  font-weight:600;
+  font-size:.9rem;
 }
 
-nav a:hover {
-  color: var(--naranja);
+nav a:hover{
+  color:var(--o);
 }
 
 
@@ -121,40 +91,34 @@ nav a:hover {
    BOTONES
 ========================================================= */
 
-.btn {
-  display: inline-block;
-
-  padding: 12px 20px;
-
-  border-radius: 25px;
-
-  text-decoration: none;
-
-  font-weight: bold;
-
-  margin: 5px;
-
-  transition: .25s ease;
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:5px;
+  cursor:pointer;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
+.orange{
+  background:var(--o);
+  color:#fff;
 }
 
-.orange {
-  background: var(--naranja);
-  color: #fff;
+.green{
+  background:var(--g);
+  color:#fff;
 }
 
-.green {
-  background: var(--verde);
-  color: #fff;
+.outline{
+  border:1px solid var(--g);
+  color:var(--g);
+  background:#fff;
 }
 
-.outline {
-  border: 1px solid var(--verde);
-  color: var(--verde);
-  background: transparent;
+.btn:hover{
+  opacity:.9;
 }
 
 
@@ -162,52 +126,37 @@ nav a:hover {
    HERO
 ========================================================= */
 
-.hero {
-  display: grid;
-
-  grid-template-columns: 48% 52%;
-
-  min-height: 570px;
-
-  background: var(--blanco);
+.hero{
+  display:grid;
+  grid-template-columns:48% 52%;
+  min-height:570px;
+  background:#fff;
 }
 
-.copy {
-  padding: 70px 9%;
-
-  display: flex;
-
-  justify-content: center;
-
-  flex-direction: column;
+.copy{
+  padding:70px 9%;
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
 }
 
-h1 {
-  font:
-    500 clamp(2.5rem, 4.5vw, 4.3rem)/1.1
-    Georgia,
-    serif;
-
-  color: var(--verde);
-
-  margin: 0 0 25px;
+h1{
+  font:500 clamp(2.5rem,4.5vw,4.3rem)/1.1 Georgia,serif;
+  color:var(--g);
+  margin:0 0 25px;
 }
 
-h1 span {
-  color: var(--naranja);
+h1 span{
+  color:var(--o);
 }
 
-.hero p {
-  font-size: 1.15rem;
-  color: #586864;
+.hero p{
+  font-size:1.15rem;
+  color:#586864;
 }
 
-.photo {
-  background:
-    url("foto.jpg")
-    center center /
-    cover
-    no-repeat;
+.photo{
+  background:url('foto.jpg') center/cover;
 }
 
 
@@ -215,35 +164,26 @@ h1 span {
    SECCIONES GENERALES
 ========================================================= */
 
-section {
-  padding: 65px 5%;
+section{
+  padding:65px 5%;
 }
 
-.container {
-  max-width: 1150px;
-  margin: auto;
+.container{
+  max-width:1150px;
+  margin:auto;
 }
 
-.title {
-  text-align: center;
-
-  font:
-    500 2.2rem
-    Georgia,
-    serif;
-
-  color: var(--azul);
+.title{
+  text-align:center;
+  font:500 2.2rem Georgia,serif;
 }
 
 .sub,
-.subtitle {
-  text-align: center;
-
-  color: var(--gris);
-
-  max-width: 720px;
-
-  margin: 0 auto 35px;
+.subtitle{
+  text-align:center;
+  color:#65716d;
+  max-width:720px;
+  margin:0 auto 35px;
 }
 
 
@@ -251,23 +191,8 @@ section {
    SOBRE MÍ
 ========================================================= */
 
-#sobre {
-  background: var(--fondo);
-}
-
-#sobre img {
-  width: 170px;
-  height: 170px;
-
-  object-fit: cover;
-
-  border-radius: 50%;
-
-  display: block;
-
-  margin: 0 auto 20px;
-
-  box-shadow: 0 6px 20px rgba(0,0,0,.12);
+#sobre{
+  background:var(--bg);
 }
 
 
@@ -275,58 +200,36 @@ section {
    SERVICIOS
 ========================================================= */
 
-.services {
-  background: var(--blanco);
+.services{
+  background:#fff;
 }
 
-.cards {
-  display: grid;
-
-  grid-template-columns:
-    repeat(5, 1fr);
-
-  gap: 18px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:18px;
 }
 
-.card {
-  background: var(--blanco);
-
-  border: 1px solid var(--gris-claro);
-
-  border-radius: 20px;
-
-  padding: 25px 16px;
-
-  text-align: center;
-
-  box-shadow: var(--sombra);
-
-  transition: .25s ease;
+.card{
+  background:#fff;
+  border:1px solid #e7ebe3;
+  border-radius:20px;
+  padding:25px 16px;
+  text-align:center;
+  box-shadow:0 6px 20px #00000008;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-
-  box-shadow:
-    0 10px 28px
-    rgba(0,0,0,.10);
+.icon{
+  font-size:2rem;
 }
 
-.icon {
-  font-size: 2rem;
+.card h3{
+  font:600 1.15rem Georgia,serif;
 }
 
-.card h3 {
-  font:
-    600 1.15rem
-    Georgia,
-    serif;
-}
-
-.card p {
-  font-size: .9rem;
-
-  color: var(--gris);
+.card p{
+  font-size:.9rem;
+  color:#65716d;
 }
 
 
@@ -334,292 +237,198 @@ section {
    ACOMPAÑAMIENTO PSICOLÓGICO ESCOLAR
 ========================================================= */
 
-.school-service {
-  padding: 70px 20px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f4fbfa,
-      #eef7ff
-    );
+#acompanamiento-escolar{
+  padding:70px 20px;
+  background:linear-gradient(135deg,#f4fbfa,#eef7ff);
 }
 
-.school-container {
-  max-width: 1100px;
-  margin: auto;
+.school-container{
+  max-width:1100px;
+  margin:auto;
 }
 
-.school-intro {
-  text-align: center;
-
-  max-width: 800px;
-
-  margin:
-    0 auto 45px;
+.school-intro{
+  text-align:center;
+  max-width:800px;
+  margin:0 auto 45px;
 }
 
-.school-badge {
-  display: inline-block;
-
-  background: var(--turquesa-claro);
-
-  color: var(--turquesa);
-
-  padding: 8px 18px;
-
-  border-radius: 30px;
-
-  font-size: 14px;
-
-  font-weight: 600;
+.school-badge{
+  display:inline-block;
+  background:#dff3ef;
+  color:#287c72;
+  padding:8px 18px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:600;
 }
 
-.school-title {
-  font-size: 38px;
-
-  color: var(--azul);
-
-  margin:
-    18px 0 12px;
+.school-title{
+  font-size:38px;
+  color:#234b55;
+  margin:18px 0 12px;
 }
 
-.school-subtitle {
-  font-size: 21px;
-
-  font-weight: 500;
-
-  color: #4d6d75;
+.school-subtitle{
+  font-size:21px;
+  font-weight:500;
+  color:#4d6d75;
 }
 
-.school-text {
-  font-size: 17px;
-
-  line-height: 1.7;
-
-  color: #5d6f74;
+.school-description{
+  font-size:17px;
+  line-height:1.7;
+  color:#5d6f74;
 }
 
-.school-intro-grid {
-  display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap: 30px;
-
-  align-items: center;
-
-  margin-bottom: 45px;
+.school-intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+  margin-bottom:45px;
 }
 
-.school-box {
-  background: white;
-
-  padding: 30px;
-
-  border-radius: 20px;
-
-  box-shadow:
-    0 8px 25px
-    rgba(30,80,90,.08);
+.school-box{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(30,80,90,.08);
 }
 
-.school-box h3 {
-  color: var(--turquesa);
+.school-box h3{
+  color:#287c72;
 }
 
-.school-box p {
-  color: #5d6f74;
-
-  line-height: 1.7;
+.school-box p{
+  color:#5d6f74;
+  line-height:1.7;
 }
 
-.school-visual {
-  background:
-    linear-gradient(
-      135deg,
-      #dff3ef,
-      #dceefa
-    );
-
-  padding: 50px 25px;
-
-  border-radius: 20px;
-
-  text-align: center;
+.school-visual{
+  background:linear-gradient(135deg,#dff3ef,#dceefa);
+  padding:50px 25px;
+  border-radius:20px;
+  text-align:center;
 }
 
-.school-emoji {
-  font-size: 70px;
+.school-emoji{
+  font-size:70px;
 }
 
-.school-visual p {
-  font-size: 18px;
-
-  color: #41636b;
-
-  line-height: 1.5;
+.school-visual p{
+  font-size:18px;
+  color:#41636b;
+  line-height:1.5;
 }
 
-.school-heading {
-  text-align: center;
-
-  color: var(--azul);
-
-  font-size: 30px;
-
-  margin:
-    45px 0 25px;
+.school-heading{
+  text-align:center;
+  color:#234b55;
+  font-size:30px;
+  margin:45px 0 25px;
 }
 
-.school-list {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
-  gap: 12px;
-
-  max-width: 850px;
-
-  margin: auto;
+.school-needs{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  max-width:850px;
+  margin:auto;
 }
 
-.school-list-item {
-  background: white;
-
-  padding: 16px 20px;
-
-  border-radius: 12px;
-
-  color: #49666d;
+.school-need{
+  background:#fff;
+  padding:16px 20px;
+  border-radius:12px;
+  color:#49666d;
 }
 
-.school-benefits {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 18px;
+.school-benefits{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
 
-.school-benefit {
-  background: white;
-
-  padding: 25px 20px;
-
-  border-radius: 18px;
-
-  text-align: center;
-
-  box-shadow:
-    0 6px 20px
-    rgba(30,80,90,.06);
+.school-benefit{
+  background:#fff;
+  padding:25px 20px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(30,80,90,.06);
 }
 
-.school-benefit-icon {
-  font-size: 38px;
+.school-benefit-icon{
+  font-size:38px;
 }
 
-.school-benefit h3 {
-  color: var(--turquesa);
+.school-benefit h3{
+  color:#287c72;
 }
 
-.school-benefit p {
-  color: #64777c;
-
-  line-height: 1.6;
-
-  font-size: 15px;
+.school-benefit p{
+  color:#64777c;
+  line-height:1.6;
+  font-size:15px;
 }
 
-.school-steps {
-  display: grid;
-
-  grid-template-columns:
-    repeat(5, 1fr);
-
-  gap: 15px;
+.school-steps{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:15px;
 }
 
-.school-step {
-  background: white;
-
-  padding: 22px 15px;
-
-  border-radius: 18px;
-
-  text-align: center;
+.school-step{
+  background:#fff;
+  padding:22px 15px;
+  border-radius:18px;
+  text-align:center;
 }
 
-.school-number {
-  background: var(--turquesa);
-
-  color: white;
-
-  width: 40px;
-  height: 40px;
-
-  line-height: 40px;
-
-  border-radius: 50%;
-
-  margin: auto;
+.school-step-number{
+  background:#287c72;
+  color:white;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  border-radius:50%;
+  margin:auto;
 }
 
-.school-step h3 {
-  color: var(--azul);
-
-  font-size: 18px;
+.school-step h3{
+  color:#234b55;
+  font-size:18px;
 }
 
-.school-step p {
-  color: #65777b;
-
-  font-size: 14px;
-
-  line-height: 1.5;
+.school-step p{
+  color:#65777b;
+  font-size:14px;
+  line-height:1.5;
 }
 
-.school-cta {
-  margin-top: 55px;
-
-  padding: 40px 25px;
-
-  background: var(--turquesa);
-
-  border-radius: 22px;
-
-  text-align: center;
-
-  color: white;
+.school-cta{
+  margin-top:55px;
+  padding:40px 25px;
+  background:#287c72;
+  border-radius:22px;
+  text-align:center;
+  color:white;
 }
 
-.school-cta p {
-  max-width: 700px;
-
-  margin:
-    15px auto 25px;
-
-  line-height: 1.7;
+.school-cta p{
+  max-width:700px;
+  margin:15px auto 25px;
+  line-height:1.7;
 }
 
-.school-cta a {
-  display: inline-block;
-
-  background: white;
-
-  color: var(--turquesa);
-
-  padding: 14px 28px;
-
-  border-radius: 30px;
-
-  text-decoration: none;
-
-  font-weight: bold;
+.school-cta a{
+  display:inline-block;
+  background:white;
+  color:#287c72;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 
@@ -627,73 +436,41 @@ section {
    BLOG
 ========================================================= */
 
-.blog {
-  background: var(--blanco);
+.blog{
+  background:#fff;
 }
 
-.two {
-  display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap: 40px;
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
 }
 
-.post {
-  display: flex;
-
-  gap: 15px;
-
-  padding: 14px 0;
-
-  border-bottom:
-    1px solid #e5e8df;
+.post{
+  display:flex;
+  gap:15px;
+  padding:14px 0;
+  border-bottom:1px solid #e5e8df;
 }
 
-.thumb {
-  width: 115px;
-  height: 78px;
-
-  border-radius: 12px;
-
-  background: #e8eee2;
-
-  flex: none;
-
-  overflow: hidden;
+.thumb{
+  width:115px;
+  height:78px;
+  border-radius:12px;
+  background:#e8eee2;
+  flex:none;
+  overflow:hidden;
 }
 
-.thumb img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  border-radius: 12px;
+.post h3{
+  margin:0;
+  font-size:1rem;
 }
 
-.post h3 {
-  margin: 0 0 5px;
-
-  font-size: 1rem;
-}
-
-.post h3 a,
-.post > div > a {
-  color: var(--verde);
-
-  font-weight: bold;
-
-  text-decoration: none;
-}
-
-.post p {
-  margin: 5px 0;
-
-  color: var(--gris);
-
-  font-size: .9rem;
+.post a{
+  color:var(--g);
+  font-weight:bold;
+  text-decoration:none;
 }
 
 
@@ -701,268 +478,225 @@ section {
    RECURSOS PARA LA VIDA
 ========================================================= */
 
-.resources {
-  background: var(--blanco);
+.resources{
+  background:#fff;
 }
 
-.resource-categories {
-  display: grid;
-
-  grid-template-columns:
-    repeat(5, 1fr);
-
-  gap: 18px;
-
-  margin:
-    30px auto 40px;
+.resources .subtitle{
+  text-align:center;
+  color:#65716d;
+  max-width:720px;
+  margin:0 auto 35px;
 }
 
-.resource-category {
-  border: 1px solid #e5e9df;
 
-  background: white;
+/* =========================================================
+   CATEGORÍAS DE RECURSOS
+========================================================= */
 
-  color: var(--azul);
-
-  padding: 25px 15px;
-
-  border-radius: 20px;
-
-  cursor: pointer;
-
-  text-align: center;
-
-  min-height: 180px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
-  gap: 8px;
-
-  box-shadow: var(--sombra);
-
-  transition: .25s ease;
+.resource-categories{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  max-width:1100px;
+  margin:35px auto 45px;
 }
 
-.resource-category:hover {
-  transform: translateY(-5px);
-
-  border-color: var(--verde);
-
-  box-shadow:
-    0 10px 28px
-    rgba(0,0,0,.10);
+.resource-category{
+  width:100%;
+  min-height:250px;
+  border:1px solid #e4e9df;
+  border-radius:22px;
+  background:#fff;
+  padding:28px 22px;
+  text-align:center;
+  cursor:pointer;
+  font-family:inherit;
+  box-shadow:0 7px 22px #00000009;
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
 }
 
-.resource-category span {
-  font-size: 2.5rem;
+.resource-category:hover{
+  transform:translateY(-5px);
+  border-color:var(--g);
+  box-shadow:0 12px 28px #00000012;
 }
 
-.resource-category strong {
-  font-size: .95rem;
+.resource-icon{
+  display:block;
+  font-size:3rem;
+  margin-bottom:15px;
 }
 
-.resource-category small {
-  color: var(--verde);
-
-  font-weight: bold;
+.resource-category strong{
+  display:block;
+  color:var(--d);
+  font:600 1.15rem Georgia,serif;
+  line-height:1.35;
+  margin-bottom:12px;
 }
 
-.resources-list {
-  display: none;
+.resource-category p{
+  margin:0 auto 18px;
+  color:#65716d;
+  font-size:.9rem;
+  line-height:1.6;
+  max-width:310px;
 }
 
-.back-resources {
-  border: 0;
-
-  background: var(--verde-claro);
-
-  color: var(--verde);
-
-  padding: 10px 18px;
-
-  border-radius: 20px;
-
-  cursor: pointer;
-
-  font-weight: bold;
-
-  margin-bottom: 25px;
+.resource-category small{
+  display:inline-block;
+  color:var(--g);
+  font-size:.85rem;
+  font-weight:bold;
 }
 
-#titulo-categoria {
-  text-align: center;
-
-  color: var(--azul);
-
-  font:
-    500 2rem
-    Georgia,
-    serif;
-
-  margin-bottom: 30px;
+.resource-category:hover small{
+  color:var(--o);
 }
 
-.products {
-  display: grid;
 
-  grid-template-columns:
-    repeat(4, 1fr);
+/* =========================================================
+   LISTA DE PRODUCTOS
+========================================================= */
 
-  gap: 20px;
+.resources-list{
+  max-width:1100px;
+  margin:auto;
 }
 
-.product {
-  border:
-    1px solid #e6e9e1;
-
-  border-radius: 20px;
-
-  padding: 20px;
-
-  background: white;
-
-  box-shadow: var(--sombra);
-
-  transition: .25s ease;
-
-  overflow: hidden;
+.back-resources{
+  border:0;
+  background:var(--g);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:22px;
+  cursor:pointer;
+  font-family:inherit;
+  font-weight:bold;
+  margin-bottom:25px;
 }
 
-.product:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 10px 30px
-    rgba(0,0,0,.10);
+.back-resources:hover{
+  background:var(--o);
 }
 
-.product-img {
-  width: 100%;
-
-  height: 180px;
-
-  border-radius: 15px;
-
-  background: #eef2e9;
-
-  display: grid;
-
-  place-items: center;
-
-  overflow: hidden;
-
-  margin-bottom: 15px;
-
-  font-size: 4rem;
+#titulo-categoria{
+  text-align:center;
+  color:var(--d);
+  font:500 2rem Georgia,serif;
+  margin:10px 0 30px;
 }
 
-.product-img img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
 }
 
-.product-body h3 {
-  font:
-    600 1.15rem
-    Georgia,
-    serif;
-
-  margin-top: 0;
-
-  color: var(--azul);
+.product{
+  border:1px solid #e6e9e1;
+  border-radius:20px;
+  padding:24px;
+  background:#fff;
+  box-shadow:0 6px 20px #00000009;
 }
 
-.product-body p {
-  color: var(--gris);
-
-  font-size: .9rem;
+.product-img{
+  position:relative;
+  min-height:130px;
+  border-radius:15px;
+  background:#eef2e9;
+  display:grid;
+  place-items:center;
+  font-size:4rem;
+  margin-bottom:15px;
+  overflow:hidden;
 }
 
-.resource-price {
-  color: var(--naranja) !important;
-
-  font-weight: bold;
-
-  font-size: 1rem !important;
+.product-img img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
 }
 
-.buy {
-  width: 100%;
-
-  border: 0;
-
-  cursor: pointer;
-
-  font-family: inherit;
-
-  display: block;
-
-  margin-top: 14px;
-
-  text-align: center;
-
-  background: var(--verde);
-
-  color: white;
-
-  text-decoration: none;
-
-  padding: 11px;
-
-  border-radius: 20px;
-
-  font-weight: bold;
-
-  transition: .25s ease;
+.product h3{
+  font:600 1.15rem Georgia,serif;
+  color:var(--d);
 }
 
-.buy:hover {
-  background: var(--naranja);
+.product p{
+  color:#65716d;
+  font-size:.9rem;
 }
 
-.no-resources {
-  text-align: center;
-
-  background: var(--verde-claro);
-
-  padding: 30px;
-
-  border-radius: 20px;
-
-  color: var(--gris);
+.resource-price{
+  color:var(--o) !important;
+  font-weight:bold;
+  font-size:1rem !important;
 }
 
-.resources-contact {
-  margin:
-    40px auto 0;
-
-  max-width: 800px;
-
-  text-align: center;
-
-  background: #f6f1e8;
-
-  border-radius: 20px;
-
-  padding: 30px 25px;
+.buy{
+  display:block;
+  width:100%;
+  margin-top:14px;
+  text-align:center;
+  background:#718565;
+  color:#fff;
+  text-decoration:none;
+  padding:10px;
+  border-radius:20px;
+  font-weight:bold;
+  border:0;
+  cursor:pointer;
+  font-family:inherit;
 }
 
-.resources-contact h3 {
-  color: var(--azul);
-
-  margin-top: 0;
+.buy:hover{
+  background:var(--o);
 }
 
-.resources-contact p {
-  color: var(--gris);
+
+/* =========================================================
+   MENSAJE SIN RECURSOS
+========================================================= */
+
+.no-resources{
+  grid-column:1 / -1;
+  text-align:center;
+  background:#f6f8f3;
+  border-radius:18px;
+  padding:30px;
+  color:#65716d;
+}
+
+
+/* =========================================================
+   CONTACTO DE RECURSOS
+========================================================= */
+
+.resources-contact{
+  max-width:800px;
+  margin:45px auto 0;
+  padding:30px;
+  text-align:center;
+  background:#f6f1e8;
+  border-radius:22px;
+}
+
+.resources-contact h3{
+  color:var(--d);
+  font:600 1.35rem Georgia,serif;
+  margin:0 0 10px;
+}
+
+.resources-contact p{
+  color:#65716d;
+  margin:0 0 20px;
 }
 
 
@@ -970,42 +704,31 @@ section {
    PROCESO DE ATENCIÓN
 ========================================================= */
 
-.process {
-  background: var(--verde-claro);
+.process{
+  background:#f0f4eb;
 }
 
-.steps {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 20px;
-
-  text-align: center;
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  text-align:center;
 }
 
-.num {
-  margin: auto;
-
-  background: var(--verde);
-
-  color: #fff;
-
-  width: 44px;
-  height: 44px;
-
-  border-radius: 50%;
-
-  display: grid;
-
-  place-items: center;
-
-  font-weight: bold;
+.num{
+  margin:auto;
+  background:var(--g);
+  color:#fff;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:bold;
 }
 
-.step h3 {
-  color: var(--verde);
+.step h3{
+  color:var(--g);
 }
 
 
@@ -1013,31 +736,23 @@ section {
    CONTACTO
 ========================================================= */
 
-.contact {
-  background: var(--blanco);
+.contact{
+  background:#fff;
 }
 
-.contactgrid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  text-align: center;
+.contactgrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  text-align:center;
 }
 
-.contactbox {
-  padding: 18px;
-
-  color: var(--azul);
+.contactbox{
+  padding:18px;
 }
 
-.contactbox a {
-  color: var(--verde);
-
-  text-decoration: none;
-
-  font-weight: bold;
+.contactbox a{
+  color:var(--g);
+  text-decoration:none;
 }
 
 
@@ -1045,14 +760,11 @@ section {
    FOOTER
 ========================================================= */
 
-footer {
-  background: var(--verde);
-
-  color: white;
-
-  text-align: center;
-
-  padding: 25px;
+footer{
+  background:var(--g);
+  color:#fff;
+  text-align:center;
+  padding:25px;
 }
 
 
@@ -1060,45 +772,27 @@ footer {
    BOTÓN FLOTANTE WHATSAPP
 ========================================================= */
 
-.float {
-  position: fixed;
-
-  right: 20px;
-  bottom: 20px;
-
-  z-index: 2000;
-
-  background: #25d366;
-
-  color: white;
-
-  width: 58px;
-  height: 58px;
-
-  border-radius: 50%;
-
-  display: grid;
-
-  place-items: center;
-
-  text-decoration: none;
-
-  box-shadow:
-    0 5px 18px
-    rgba(0,0,0,.20);
-
-  transition: .25s ease;
+.float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:2000;
+  background:#25d366;
+  color:#fff;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  text-decoration:none;
+  font-size:25px;
+  box-shadow:0 5px 15px #0003;
 }
 
-.float:hover {
-  transform: scale(1.08);
-}
-
-.float svg {
-  width: 32px;
-  height: 32px;
-
-  fill: white;
+.float svg{
+  width:32px;
+  height:32px;
+  fill:#fff;
 }
 
 
@@ -1106,351 +800,174 @@ footer {
    VENTANA DEL ARTÍCULO
 ========================================================= */
 
-#ventana-articulo {
-  position: fixed;
-
-  inset: 0;
-
-  background:
-    rgba(0,0,0,.65);
-
-  z-index: 9999;
-
-  overflow-y: auto;
-
-  padding: 30px 15px;
+#ventana-articulo{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  z-index:9999;
+  overflow-y:auto;
+  padding:30px 15px;
 }
 
-.article-window {
-  max-width: 850px;
-
-  margin: 30px auto;
-
-  background: white;
-
-  border-radius: 20px;
-
-  padding: 35px;
-
-  color: var(--azul);
-
-  box-shadow:
-    0 10px 40px
-    rgba(0,0,0,.25);
+.articulo-contenido{
+  max-width:850px;
+  margin:30px auto;
+  background:#fff;
+  border-radius:20px;
+  padding:35px;
+  color:#244c52;
+  box-shadow:0 10px 40px rgba(0,0,0,.25);
 }
 
-.article-close {
-  float: right;
-
-  border: 0;
-
-  background: var(--verde);
-
-  color: white;
-
-  width: 38px;
-  height: 38px;
-
-  border-radius: 50%;
-
-  font-size: 20px;
-
-  cursor: pointer;
+.cerrar-articulo{
+  float:right;
+  border:0;
+  background:#718565;
+  color:#fff;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:20px;
+  cursor:pointer;
 }
 
-.article-window img {
-  width: 100%;
-
-  max-height: 400px;
-
-  object-fit: cover;
-
-  border-radius: 15px;
-
-  margin-bottom: 25px;
+.articulo-contenido h1{
+  color:#718565;
+  font-family:Georgia,serif;
+  font-size:2.2rem;
+  margin-top:20px;
 }
 
-.article-window h1 {
-  color: var(--verde);
-
-  font-family: Georgia, serif;
-
-  font-size: 2.2rem;
-
-  margin-top: 20px;
+.articulo-cuerpo{
+  font-size:1.05rem;
+  line-height:1.8;
+  margin-top:25px;
 }
 
-.article-date {
-  color: #777;
-
-  font-size: .9rem;
-}
-
-.article-content {
-  font-size: 1.05rem;
-
-  line-height: 1.8;
-
-  margin-top: 25px;
-}
-
-.article-footer {
-  margin-top: 35px;
-
-  padding-top: 20px;
-
-  border-top:
-    1px solid #e5e8df;
-
-  text-align: center;
-}
-
-.article-footer button {
-  background: var(--verde);
-
-  color: white;
-
-  border: 0;
-
-  padding: 12px 25px;
-
-  border-radius: 25px;
-
-  cursor: pointer;
-
-  font-weight: bold;
+.cerrar-articulo-final{
+  background:#718565;
+  color:#fff;
+  border:0;
+  padding:12px 25px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
 
 /* =========================================================
-   RESPONSIVE - TABLET
+   RESPONSIVE TABLET
 ========================================================= */
 
-@media (max-width: 1100px) {
-
-  .resource-categories {
-    grid-template-columns:
-      repeat(3, 1fr);
-  }
-
-  .products {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-  .school-benefits {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-  .school-steps {
-    grid-template-columns:
-      repeat(3, 1fr);
-  }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE - 900 PX
-========================================================= */
-
-@media (max-width: 900px) {
-
-  nav {
-    gap: 12px;
-  }
-
-  nav img {
-    margin: auto;
-  }
+@media(max-width:900px){
 
   .hero,
-  .two {
-    grid-template-columns: 1fr;
+  .two{
+    grid-template-columns:1fr;
   }
 
-  .photo {
-    min-height: 350px;
-
-    order: -1;
+  .photo{
+    min-height:350px;
+    order:-1;
   }
 
-  .cards {
-    grid-template-columns:
-      repeat(2, 1fr);
+  .cards{
+    grid-template-columns:repeat(2,1fr);
   }
 
   .steps,
-  .contactgrid {
-    grid-template-columns:
-      repeat(2, 1fr);
+  .contactgrid{
+    grid-template-columns:1fr 1fr;
   }
 
-  .school-intro-grid {
-    grid-template-columns: 1fr;
+  .products{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .school-list {
-    grid-template-columns:
-      repeat(2, 1fr);
+  .resource-categories{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .school-steps {
-    grid-template-columns:
-      repeat(2, 1fr);
+  .school-benefits{
+    grid-template-columns:1fr 1fr;
   }
 
-  .resource-categories {
-    grid-template-columns:
-      repeat(2, 1fr);
+  .school-steps{
+    grid-template-columns:repeat(2,1fr);
   }
 
 }
 
 
 /* =========================================================
-   RESPONSIVE - CELULAR
+   RESPONSIVE CELULAR
 ========================================================= */
 
-@media (max-width: 600px) {
+@media(max-width:600px){
 
-  nav {
-    justify-content: center;
-
-    padding:
-      12px 3%;
-
-    gap: 8px 12px;
+  nav{
+    justify-content:center;
+    gap:12px;
   }
 
-  nav img {
-    width: 130px;
-
-    margin: auto;
-
-    flex-basis: 100%;
+  nav img{
+    margin:auto;
   }
 
-  nav a {
-    font-size: .82rem;
-  }
-
-  nav .btn {
-    width: 100%;
-
-    text-align: center;
-  }
-
-  .copy {
-    padding:
-      50px 7%;
-  }
-
-  h1 {
-    font-size:
-      clamp(
-        2.2rem,
-        10vw,
-        3.2rem
-      );
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  section {
-    padding:
-      50px 5%;
-  }
-
-  .title {
-    font-size: 1.9rem;
+  nav a{
+    font-size:.82rem;
   }
 
   .cards,
   .steps,
   .contactgrid,
   .products,
-  .resource-categories,
-  .school-list,
-  .school-benefits,
-  .school-steps {
-    grid-template-columns: 1fr;
+  .resource-categories{
+    grid-template-columns:1fr;
   }
 
-  .photo {
-    min-height: 300px;
+  .copy{
+    padding:50px 7%;
   }
 
-  .school-title {
-    font-size: 30px;
+  .hero{
+    min-height:auto;
   }
 
-  .school-subtitle {
-    font-size: 19px;
+  .photo{
+    min-height:300px;
   }
 
-  .school-heading {
-    font-size: 25px;
+  .school-title{
+    font-size:30px;
   }
 
-  .school-service {
-    padding:
-      55px 15px;
+  .school-subtitle{
+    font-size:18px;
   }
 
-  .school-box {
-    padding: 25px 20px;
+  .school-intro-grid{
+    grid-template-columns:1fr;
   }
 
-  .resource-category {
-    min-height: 150px;
+  .school-needs{
+    grid-template-columns:1fr;
   }
 
-  .post {
-    align-items: flex-start;
+  .school-benefits{
+    grid-template-columns:1fr;
   }
 
-  .thumb {
-    width: 90px;
-    height: 70px;
+  .school-steps{
+    grid-template-columns:1fr;
   }
 
-  .article-window {
-    padding: 25px 20px;
+  .articulo-contenido{
+    padding:25px 20px;
   }
 
-  .article-window h1 {
-    font-size: 1.8rem;
-  }
-
-  .float {
-    right: 15px;
-    bottom: 15px;
-  }
-
-}
-
-
-/* =========================================================
-   CELULAR PEQUEÑO
-========================================================= */
-
-@media (max-width: 400px) {
-
-  nav a {
-    font-size: .76rem;
-  }
-
-  .btn {
-    padding:
-      10px 15px;
-  }
-
-  .school-title {
-    font-size: 27px;
+  .articulo-contenido h1{
+    font-size:1.8rem;
   }
 
 }
@@ -1465,13 +982,11 @@ footer {
 
 <!-- =======================================================
      NAVEGACIÓN
-======================================================== -->
+======================================================= -->
 
 <nav>
 
-  <img
-    src="logo_real.png"
-    alt="Psicología para la Vida">
+  <img src="logo_real.png" alt="Psicología para la Vida">
 
   <a href="#inicio">Inicio</a>
 
@@ -1490,9 +1005,7 @@ footer {
     href="https://wa.me/51917913802?text=Hola%2C%20quisiera%20solicitar%20informaci%C3%B3n%20para%20agendar%20una%20cita%20en%20Psicolog%C3%ADa%20para%20la%20Vida."
     target="_blank"
     rel="noopener">
-
     Agendar una cita
-
   </a>
 
 </nav>
@@ -1500,11 +1013,9 @@ footer {
 
 <!-- =======================================================
      INICIO
-======================================================== -->
+======================================================= -->
 
-<header
-  id="inicio"
-  class="hero">
+<header id="inicio" class="hero">
 
   <div class="copy">
 
@@ -1527,17 +1038,13 @@ footer {
         href="https://wa.me/51917913802?text=Hola%2C%20quisiera%20solicitar%20informaci%C3%B3n%20para%20agendar%20una%20cita%20en%20Psicolog%C3%ADa%20para%20la%20Vida."
         target="_blank"
         rel="noopener">
-
         Agendar una cita
-
       </a>
 
       <a
         class="btn outline"
         href="#servicios">
-
         Conocer nuestros servicios
-
       </a>
 
     </div>
@@ -1551,7 +1058,7 @@ footer {
 
 <!-- =======================================================
      SOBRE MÍ
-======================================================== -->
+======================================================= -->
 
 <section id="sobre">
 
@@ -1559,7 +1066,16 @@ footer {
 
     <img
       src="foto.jpg"
-      alt="Rosa María Caballero Sisniegas">
+      alt="Rosa María Caballero Sisniegas"
+      style="
+        width:170px;
+        height:170px;
+        object-fit:cover;
+        border-radius:50%;
+        display:block;
+        margin:0 auto 20px;
+        box-shadow:0 6px 20px #0002;
+      ">
 
     <h2 class="title">
       Sobre mí
@@ -1578,11 +1094,9 @@ footer {
 
 <!-- =======================================================
      SERVICIOS
-======================================================== -->
+======================================================= -->
 
-<section
-  id="servicios"
-  class="services">
+<section id="servicios" class="services">
 
   <div class="container">
 
@@ -1606,8 +1120,7 @@ footer {
         </h3>
 
         <p>
-          Acompañamiento emocional y conductual
-          para niños.
+          Acompañamiento emocional y conductual para niños.
         </p>
 
       </div>
@@ -1622,8 +1135,8 @@ footer {
         </h3>
 
         <p>
-          Apoyo para emociones, conducta,
-          cambios y toma de decisiones.
+          Apoyo para emociones, conducta, cambios y toma
+          de decisiones.
         </p>
 
       </div>
@@ -1638,8 +1151,8 @@ footer {
         </h3>
 
         <p>
-          Estrategias prácticas para modificar
-          conductas y desarrollar habilidades.
+          Estrategias prácticas para modificar conductas
+          y desarrollar habilidades.
         </p>
 
       </div>
@@ -1654,8 +1167,8 @@ footer {
         </h3>
 
         <p>
-          Actividades para fortalecer enfoque,
-          memoria y aprendizaje.
+          Actividades para fortalecer enfoque, memoria
+          y aprendizaje.
         </p>
 
       </div>
@@ -1685,14 +1198,11 @@ footer {
 
 <!-- =======================================================
      ACOMPAÑAMIENTO PSICOLÓGICO ESCOLAR
-======================================================== -->
+======================================================= -->
 
-<section
-  id="acompanamiento-escolar"
-  class="school-service">
+<section id="acompanamiento-escolar">
 
   <div class="school-container">
-
 
     <div class="school-intro">
 
@@ -1705,16 +1215,14 @@ footer {
       </h2>
 
       <h3 class="school-subtitle">
-        Bienestar emocional también se construye
-        en la escuela
+        Bienestar emocional también se construye en la escuela
       </h3>
 
-      <p class="school-text">
-        Un servicio de acompañamiento psicológico
-        dentro de las instituciones educativas,
-        orientado a brindar apoyo cercano y oportuno
-        a estudiantes que presentan necesidades
-        emocionales, conductuales, sociales
+      <p class="school-description">
+        Un servicio de acompañamiento psicológico dentro
+        de las instituciones educativas, orientado a brindar
+        apoyo cercano y oportuno a estudiantes que presentan
+        necesidades emocionales, conductuales, sociales
         o de adaptación.
       </p>
 
@@ -1723,7 +1231,6 @@ footer {
 
     <div class="school-intro-grid">
 
-
       <div class="school-box">
 
         <h3>
@@ -1731,18 +1238,16 @@ footer {
         </h3>
 
         <p>
-          El acompañamiento psicológico se desarrolla
-          dentro de la institución educativa,
-          facilitando que los estudiantes puedan
-          acceder a orientación psicológica sin
-          necesidad de salir del colegio.
+          El acompañamiento psicológico se desarrolla dentro
+          de la institución educativa, facilitando que los
+          estudiantes puedan acceder a orientación psicológica
+          sin necesidad de salir del colegio.
         </p>
 
         <p>
-          El servicio se realiza en coordinación
-          con la dirección, docentes y familias,
-          respetando la autorización de los padres
-          o apoderados y el bienestar del estudiante.
+          El servicio se realiza en coordinación con la dirección,
+          docentes y familias, respetando la autorización de los
+          padres o apoderados y el bienestar del estudiante.
         </p>
 
       </div>
@@ -1772,37 +1277,37 @@ footer {
     </h2>
 
 
-    <div class="school-list">
+    <div class="school-needs">
 
-      <div class="school-list-item">
+      <div class="school-need">
         ✓ Dificultades emocionales
       </div>
 
-      <div class="school-list-item">
+      <div class="school-need">
         ✓ Problemas de conducta
       </div>
 
-      <div class="school-list-item">
+      <div class="school-need">
         ✓ Regulación emocional
       </div>
 
-      <div class="school-list-item">
+      <div class="school-need">
         ✓ Dificultades de adaptación escolar
       </div>
 
-      <div class="school-list-item">
+      <div class="school-need">
         ✓ Habilidades sociales
       </div>
 
-      <div class="school-list-item">
+      <div class="school-need">
         ✓ Autoestima
       </div>
 
-      <div class="school-list-item">
+      <div class="school-need">
         ✓ Situaciones que afectan el rendimiento escolar
       </div>
 
-      <div class="school-list-item">
+      <div class="school-need">
         ✓ Orientación ante necesidades detectadas
         por docentes y familias
       </div>
@@ -1817,7 +1322,6 @@ footer {
 
     <div class="school-benefits">
 
-
       <div class="school-benefit">
 
         <div class="school-benefit-icon">
@@ -1829,9 +1333,8 @@ footer {
         </h3>
 
         <p>
-          Apoyo oportuno para favorecer la
-          regulación emocional, habilidades sociales,
-          autoestima y adaptación escolar.
+          Apoyo oportuno para favorecer la regulación emocional,
+          habilidades sociales, autoestima y adaptación escolar.
         </p>
 
       </div>
@@ -1848,9 +1351,9 @@ footer {
         </h3>
 
         <p>
-          Orientación profesional ante situaciones
-          emocionales o conductuales y apoyo para
-          favorecer un mejor clima en el aula.
+          Orientación profesional ante situaciones emocionales
+          o conductuales y apoyo para favorecer un mejor clima
+          en el aula.
         </p>
 
       </div>
@@ -1867,9 +1370,8 @@ footer {
         </h3>
 
         <p>
-          Mayor accesibilidad al servicio y
-          seguimiento cercano del bienestar
-          emocional de sus hijos.
+          Mayor accesibilidad al servicio y seguimiento cercano
+          del bienestar emocional de sus hijos.
         </p>
 
       </div>
@@ -1886,9 +1388,8 @@ footer {
         </h3>
 
         <p>
-          Apoyo en la detección temprana de
-          dificultades y fortalecimiento de una
-          convivencia escolar saludable.
+          Apoyo en la detección temprana de dificultades
+          y fortalecimiento de una convivencia escolar saludable.
         </p>
 
       </div>
@@ -1903,10 +1404,9 @@ footer {
 
     <div class="school-steps">
 
-
       <div class="school-step">
 
-        <div class="school-number">
+        <div class="school-step-number">
           1
         </div>
 
@@ -1924,7 +1424,7 @@ footer {
 
       <div class="school-step">
 
-        <div class="school-number">
+        <div class="school-step-number">
           2
         </div>
 
@@ -1942,7 +1442,7 @@ footer {
 
       <div class="school-step">
 
-        <div class="school-number">
+        <div class="school-step-number">
           3
         </div>
 
@@ -1951,8 +1451,8 @@ footer {
         </h3>
 
         <p>
-          El servicio se brinda con autorización
-          escrita de los padres o apoderados.
+          El servicio se brinda con autorización escrita
+          de los padres o apoderados.
         </p>
 
       </div>
@@ -1960,7 +1460,7 @@ footer {
 
       <div class="school-step">
 
-        <div class="school-number">
+        <div class="school-step-number">
           4
         </div>
 
@@ -1969,8 +1469,8 @@ footer {
         </h3>
 
         <p>
-          Las sesiones se realizan dentro de
-          la institución educativa.
+          Las sesiones se realizan dentro de la
+          institución educativa.
         </p>
 
       </div>
@@ -1978,7 +1478,7 @@ footer {
 
       <div class="school-step">
 
-        <div class="school-number">
+        <div class="school-step-number">
           5
         </div>
 
@@ -1987,8 +1487,8 @@ footer {
         </h3>
 
         <p>
-          Se favorece el trabajo coordinado entre
-          familia, escuela y psicología.
+          Se favorece el trabajo coordinado entre familia,
+          escuela y psicología.
         </p>
 
       </div>
@@ -1999,15 +1499,13 @@ footer {
     <div class="school-cta">
 
       <h2>
-        ¿Tu institución educativa desea
-        ofrecer este servicio?
+        ¿Tu institución educativa desea ofrecer este servicio?
       </h2>
 
       <p>
-        Conversemos sobre las necesidades de su
-        institución y conozcamos cómo podemos
-        trabajar juntos por el bienestar emocional
-        y desarrollo integral de los estudiantes.
+        Conversemos sobre las necesidades de su institución
+        y conozcamos cómo podemos trabajar juntos por el
+        bienestar emocional y desarrollo integral de los estudiantes.
       </p>
 
       <a href="#contacto">
@@ -2023,11 +1521,9 @@ footer {
 
 <!-- =======================================================
      BLOG
-======================================================== -->
+======================================================= -->
 
-<section
-  id="blog"
-  class="blog">
+<section id="blog" class="blog">
 
   <div class="container two">
 
@@ -2035,15 +1531,13 @@ footer {
 
       <h2
         class="title"
-        style="text-align:left;">
-
+        style="text-align:left">
         Blog para la Vida
-
       </h2>
 
       <p>
-        Consejos y herramientas prácticas para
-        acompañar a tus hijos en su desarrollo.
+        Consejos y herramientas prácticas para acompañar
+        a tus hijos en su desarrollo.
       </p>
 
     </div>
@@ -2064,11 +1558,9 @@ footer {
 
 <!-- =======================================================
      RECURSOS PARA LA VIDA
-======================================================== -->
+======================================================= -->
 
-<section
-  id="recursos"
-  class="resources">
+<section id="recursos" class="resources">
 
   <div class="container">
 
@@ -2077,9 +1569,8 @@ footer {
     </h2>
 
     <p class="subtitle">
-      Materiales seleccionados para apoyar el
-      aprendizaje, el desarrollo y el acompañamiento
-      familiar.
+      Materiales seleccionados para apoyar el aprendizaje,
+      el desarrollo y el acompañamiento familiar.
     </p>
 
 
@@ -2092,14 +1583,22 @@ footer {
         class="resource-category"
         onclick="mostrarRecursos('Emociones')">
 
-        <span>💛</span>
+        <span class="resource-icon">
+          💛
+        </span>
 
         <strong>
           Emociones y habilidades socioemocionales
         </strong>
 
+        <p>
+          Materiales para reconocer, expresar y gestionar
+          las emociones, fortalecer la autoestima y desarrollar
+          habilidades sociales.
+        </p>
+
         <small>
-          Ver recursos
+          Ver recursos →
         </small>
 
       </button>
@@ -2109,14 +1608,22 @@ footer {
         class="resource-category"
         onclick="mostrarRecursos('Desarrollo cognitivo y aprendizaje')">
 
-        <span>🧠</span>
+        <span class="resource-icon">
+          🧠
+        </span>
 
         <strong>
           Desarrollo cognitivo y aprendizaje
         </strong>
 
+        <p>
+          Actividades para estimular la atención, memoria,
+          concentración, razonamiento y otras habilidades
+          relacionadas con el aprendizaje.
+        </p>
+
         <small>
-          Ver recursos
+          Ver recursos →
         </small>
 
       </button>
@@ -2126,14 +1633,21 @@ footer {
         class="resource-category"
         onclick="mostrarRecursos('Lenguaje y comunicación')">
 
-        <span>🗣️</span>
+        <span class="resource-icon">
+          🗣️
+        </span>
 
         <strong>
           Lenguaje y comunicación
         </strong>
 
+        <p>
+          Recursos para favorecer el lenguaje, la comunicación,
+          la comprensión y la expresión verbal.
+        </p>
+
         <small>
-          Ver recursos
+          Ver recursos →
         </small>
 
       </button>
@@ -2143,14 +1657,22 @@ footer {
         class="resource-category"
         onclick="mostrarRecursos('Primera infancia y estimulación')">
 
-        <span>👶</span>
+        <span class="resource-icon">
+          👶
+        </span>
 
         <strong>
           Primera infancia y estimulación
         </strong>
 
+        <p>
+          Materiales para acompañar el desarrollo de los niños
+          durante sus primeros años mediante actividades
+          de estimulación.
+        </p>
+
         <small>
-          Ver recursos
+          Ver recursos →
         </small>
 
       </button>
@@ -2160,17 +1682,26 @@ footer {
         class="resource-category"
         onclick="mostrarRecursos('Estimulación y motricidad')">
 
-        <span>✋</span>
+        <span class="resource-icon">
+          ✋
+        </span>
 
         <strong>
           Estimulación y motricidad
         </strong>
 
+        <p>
+          Actividades para fortalecer la coordinación,
+          motricidad fina, motricidad gruesa y habilidades
+          perceptivo-motoras.
+        </p>
+
         <small>
-          Ver recursos
+          Ver recursos →
         </small>
 
       </button>
+
 
     </div>
 
@@ -2179,7 +1710,8 @@ footer {
 
     <div
       id="lista-recursos"
-      class="resources-list">
+      class="resources-list"
+      style="display:none;">
 
       <button
         class="back-resources"
@@ -2194,7 +1726,6 @@ footer {
       <div
         id="recursos-contenido"
         class="products">
-
       </div>
 
     </div>
@@ -2209,9 +1740,8 @@ footer {
       </h3>
 
       <p>
-        Escríbenos y te orientaremos sobre los
-        recursos disponibles y cuál puede adaptarse
-        mejor a tus necesidades.
+        Escríbenos y te orientaremos sobre los recursos disponibles
+        y cuál puede adaptarse mejor a tus necesidades.
       </p>
 
       <a
@@ -2233,7 +1763,7 @@ footer {
 
 <!-- =======================================================
      PROCESO DE ATENCIÓN
-======================================================== -->
+======================================================= -->
 
 <section class="process">
 
@@ -2243,9 +1773,7 @@ footer {
       Nuestro proceso de atención
     </h2>
 
-
     <div class="steps">
-
 
       <div class="step">
 
@@ -2276,8 +1804,8 @@ footer {
         </h3>
 
         <p>
-          Diseñamos un plan personalizado
-          para ti o tu hijo(a).
+          Diseñamos un plan personalizado para ti
+          o tu hijo(a).
         </p>
 
       </div>
@@ -2294,8 +1822,8 @@ footer {
         </h3>
 
         <p>
-          Trabajamos con estrategias y
-          herramientas prácticas.
+          Trabajamos con estrategias y herramientas
+          prácticas.
         </p>
 
       </div>
@@ -2327,11 +1855,9 @@ footer {
 
 <!-- =======================================================
      CONTACTO
-======================================================== -->
+======================================================= -->
 
-<section
-  id="contacto"
-  class="contact">
+<section id="contacto" class="contact">
 
   <div class="container">
 
@@ -2340,8 +1866,7 @@ footer {
     </h2>
 
     <p class="sub">
-      Estamos aquí para orientarte y brindarte
-      información sobre nuestros servicios.
+      Aquí colocaremos tus datos reales de atención.
     </p>
 
 
@@ -2351,7 +1876,6 @@ footer {
       <div class="contactbox">
 
         📍
-
         <br>
 
         <b>
@@ -2360,7 +1884,7 @@ footer {
 
         <br>
 
-        Atención en Lima, Perú
+        Tu dirección aquí
 
       </div>
 
@@ -2368,7 +1892,6 @@ footer {
       <div class="contactbox">
 
         💬
-
         <br>
 
         <b>
@@ -2377,13 +1900,8 @@ footer {
 
         <br>
 
-        <a
-          href="https://wa.me/51917913802"
-          target="_blank"
-          rel="noopener">
-
+        <a href="https://wa.me/51917913802">
           +51 917 913 802
-
         </a>
 
       </div>
@@ -2392,7 +1910,6 @@ footer {
       <div class="contactbox">
 
         ✉️
-
         <br>
 
         <b>
@@ -2401,11 +1918,8 @@ footer {
 
         <br>
 
-        <a
-          href="mailto:centro.psicologiaparalavida@gmail.com">
-
+        <a href="mailto:centro.psicologiaparalavida@gmail.com">
           centro.psicologiaparalavida@gmail.com
-
         </a>
 
       </div>
@@ -2414,7 +1928,6 @@ footer {
       <div class="contactbox">
 
         🕐
-
         <br>
 
         <b>
@@ -2427,6 +1940,7 @@ footer {
 
       </div>
 
+
     </div>
 
   </div>
@@ -2435,8 +1949,8 @@ footer {
 
 
 <!-- =======================================================
-     FOOTER
-======================================================== -->
+     PIE DE PÁGINA
+======================================================= -->
 
 <footer>
 
@@ -2453,8 +1967,8 @@ footer {
 
 
 <!-- =======================================================
-     BOTÓN WHATSAPP
-======================================================== -->
+     BOTÓN FLOTANTE WHATSAPP
+======================================================= -->
 
 <a
   class="float"
@@ -2467,11 +1981,9 @@ footer {
     viewBox="0 0 32 32"
     aria-hidden="true">
 
-    <path
-      d="M19.11 17.21c-.27-.14-1.59-.78-1.83-.87-.25-.09-.42-.14-.6.14-.18.27-.69.87-.84 1.05-.15.18-.31.2-.58.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.47.07-.72.34-.25.27-.94.92-.94 2.24s.96 2.59 1.09 2.77c.13.18 1.89 2.89 4.58 4.05.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.59-.65 1.81-1.28.22-.63.22-1.17.15-1.28-.07-.11-.25-.18-.52-.31z"/>
+    <path d="M19.11 17.21c-.27-.14-1.59-.78-1.83-.87-.25-.09-.42-.14-.6.14-.18.27-.69.87-.84 1.05-.15.18-.31.2-.58.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.47.07-.72.34-.25.27-.94.92-.94 2.24s.96 2.59 1.09 2.77c.13.18 1.89 2.89 4.58 4.05.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.59-.65 1.81-1.28.22-.63.22-1.17.15-1.28-.07-.11-.25-.18-.52-.31z"/>
 
-    <path
-      d="M16.01 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.59 4.38 1.63 6.22L3.1 28.8l6.75-1.77a12.74 12.74 0 0 0 6.16 1.58h.01c7.06 0 12.79-5.73 12.79-12.8S23.08 3.2 16.01 3.2zm0 23.27h-.01a10.47 10.47 0 0 1-5.34-1.46l-.38-.23-4.01 1.05 1.07-3.91-.25-.4a10.47 10.47 0 1 1 8.92 4.95z"/>
+    <path d="M16.01 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.59 4.38 1.63 6.22L3.1 28.8l6.75-1.77a12.74 12.74 0 0 0 6.16 1.58h.01c7.06 0 12.79-5.73 12.79-12.8S23.08 3.2 16.01 3.2zm0 23.27h-.01a10.47 10.47 0 0 1-5.34-1.46l-.38-.23-4.01 1.05 1.07-3.91-.25-.4a10.47 10.47 0 1 1 8.92 4.95z"/>
 
   </svg>
 
@@ -2479,53 +1991,44 @@ footer {
 
 
 <!-- =======================================================
-     JAVASCRIPT - RECURSOS
-======================================================== -->
+     JAVASCRIPT: RECURSOS
+======================================================= -->
 
 <script>
 
-async function mostrarRecursos(categoria) {
+async function mostrarRecursos(categoria){
 
   const categorias =
-    document.querySelector(
-      ".resource-categories"
-    );
+    document.querySelector(".resource-categories");
 
   const lista =
-    document.getElementById(
-      "lista-recursos"
-    );
+    document.getElementById("lista-recursos");
 
   const contenido =
-    document.getElementById(
-      "recursos-contenido"
-    );
+    document.getElementById("recursos-contenido");
 
   const titulo =
-    document.getElementById(
-      "titulo-categoria"
-    );
+    document.getElementById("titulo-categoria");
 
 
-  categorias.style.display = "none";
+  categorias.style.display="none";
 
-  lista.style.display = "block";
+  lista.style.display="block";
 
-  titulo.textContent = categoria;
+  titulo.textContent=categoria;
 
-  contenido.innerHTML =
+  contenido.innerHTML=
     "<p>Cargando recursos...</p>";
 
 
-  try {
+  try{
 
-    const respuesta =
-      await fetch(
-        "https://api.github.com/repos/centropsicologiaparalavida-cmd/psicologia-para-la-vida/contents/_recursos"
-      );
+    const respuesta=await fetch(
+      "https://api.github.com/repos/centropsicologiaparalavida-cmd/psicologia-para-la-vida/contents/_recursos"
+    );
 
 
-    if (!respuesta.ok) {
+    if(!respuesta.ok){
 
       throw new Error(
         "No se pudo acceder a los recursos."
@@ -2534,62 +2037,61 @@ async function mostrarRecursos(categoria) {
     }
 
 
-    const archivos =
-      await respuesta.json();
+    const archivos=await respuesta.json();
 
 
-    const archivosMarkdown =
-      archivos.filter(
-        archivo =>
-          archivo.name.endsWith(".md")
-      );
+    const archivosMarkdown=archivos.filter(
+      archivo =>
+        archivo.name.endsWith(".md")
+    );
 
 
-    const recursos = [];
+    const recursos=[];
 
 
-    for (
-      const archivo
-      of archivosMarkdown
-    ) {
+    for(const archivo of archivosMarkdown){
 
-      const respuestaArchivo =
-        await fetch(
-          archivo.download_url
-        );
+      const respuestaArchivo=
+        await fetch(archivo.download_url);
 
 
-      if (!respuestaArchivo.ok) {
+      if(!respuestaArchivo.ok){
+
         continue;
+
       }
 
 
-      const texto =
+      const texto=
         await respuestaArchivo.text();
 
 
-      const datos =
+      const datos=
         leerFrontMatter(texto);
 
 
-      const categoriaArticulo =
+      let categoriaArticulo=
         datos.category || "";
 
 
-      if (
+      if(
+
         categoriaArticulo
           .toLowerCase()
           ===
         categoria.toLowerCase()
+
         ||
+
         (
-          categoria === "Emociones"
+          categoria==="Emociones"
           &&
           categoriaArticulo
             .toLowerCase()
             .includes("emociones")
         )
-      ) {
+
+      ){
 
         recursos.push(datos);
 
@@ -2598,11 +2100,9 @@ async function mostrarRecursos(categoria) {
     }
 
 
-    if (
-      recursos.length === 0
-    ) {
+    if(recursos.length===0){
 
-      contenido.innerHTML = `
+      contenido.innerHTML=`
 
         <div class="no-resources">
 
@@ -2612,8 +2112,7 @@ async function mostrarRecursos(categoria) {
           </p>
 
           <p>
-            Próximamente encontrarás
-            nuevos recursos aquí.
+            Próximamente encontrarás nuevos recursos aquí.
           </p>
 
         </div>
@@ -2625,135 +2124,122 @@ async function mostrarRecursos(categoria) {
     }
 
 
-    contenido.innerHTML = "";
+    contenido.innerHTML="";
 
 
-    recursos.forEach(
-      function(recurso) {
+    recursos.forEach(function(recurso){
 
-        let imagen =
-          recurso.image || "";
+      let imagen=
+        recurso.image || "";
 
 
-        if (
-          imagen.startsWith("/")
-        ) {
+      if(imagen.startsWith("/")){
 
-          imagen =
-            "https://splendorous-haupia-3096b3.netlify.app"
-            + imagen;
+        imagen=
+          "https://splendorous-haupia-3096b3.netlify.app"
+          +
+          imagen;
 
+      }
+
+
+      const tarjeta=
+        document.createElement("article");
+
+
+      tarjeta.className="product";
+
+
+      tarjeta.innerHTML=`
+
+        ${
+          imagen
+
+          ?
+
+          `<div class="product-img">
+
+            <img
+              src="${imagen}"
+              alt="${recurso.title || "Recurso"}">
+
+          </div>`
+
+          :
+
+          `<div class="product-img">
+            📚
+          </div>`
         }
 
 
-        const tarjeta =
-          document.createElement(
-            "article"
-          );
+        <div class="product-body">
 
+          <h3>
+            ${recurso.title || "Recurso"}
+          </h3>
 
-        tarjeta.className =
-          "product";
-
-
-        tarjeta.innerHTML = `
 
           ${
-            imagen
+            recurso.description
 
-            ? `
+            ?
 
-              <div class="product-img">
+            `<p>
+              ${recurso.description}
+            </p>`
 
-                <img
-                  src="${imagen}"
-                  alt="${recurso.title || "Recurso"}"
-                  loading="lazy">
+            :
 
-              </div>
-
-            `
-
-            : `
-
-              <div class="product-img">
-                📚
-              </div>
-
-            `
+            ""
           }
 
 
-          <div class="product-body">
+          ${
+            recurso.price
 
-            <h3>
-              ${recurso.title || "Recurso"}
-            </h3>
+            ?
 
+            `<p class="resource-price">
+              ${recurso.price}
+            </p>`
 
-            ${
-              recurso.description
+            :
 
-              ? `
-                <p>
-                  ${recurso.description}
-                </p>
-              `
-
-              : ""
-            }
+            ""
+          }
 
 
-            ${
-              recurso.price
+          <button
+            class="buy"
+            onclick="consultarProducto('${recurso.title || "Recurso"}')">
 
-              ? `
-                <p class="resource-price">
-                  ${recurso.price}
-                </p>
-              `
+            Consultar por WhatsApp
 
-              : ""
-            }
+          </button>
 
+        </div>
 
-            <button
-              class="buy"
-              onclick="consultarProducto('${String(
-                recurso.title || "Recurso"
-              ).replace(/'/g, "\\'")}')">
-
-              Consultar por WhatsApp
-
-            </button>
-
-          </div>
-
-        `;
+      `;
 
 
-        contenido.appendChild(
-          tarjeta
-        );
+      contenido.appendChild(tarjeta);
 
-      }
-    );
+    });
 
 
-  }
-
-  catch (error) {
+  }catch(error){
 
     console.error(error);
 
 
-    contenido.innerHTML = `
+    contenido.innerHTML=`
 
       <div class="no-resources">
 
         <p>
-          No se pudieron cargar los
-          recursos en este momento.
+          No se pudieron cargar los recursos
+          en este momento.
         </p>
 
       </div>
@@ -2765,73 +2251,61 @@ async function mostrarRecursos(categoria) {
 }
 
 
-/* =======================================================
+/* =========================================================
    LEER FRONT MATTER
-======================================================== */
+========================================================= */
 
-function leerFrontMatter(texto) {
+function leerFrontMatter(texto){
 
-  const resultado = {};
+  const resultado={};
 
-  const partes =
+  const partes=
     texto.split("---");
 
 
-  if (
-    partes.length >= 3
-  ) {
+  if(partes.length>=3){
 
-    const frontMatter =
+    const frontMatter=
       partes[1];
 
 
     frontMatter
       .split("\n")
-      .forEach(
-        function(linea) {
+      .forEach(function(linea){
 
-          const posicion =
-            linea.indexOf(":");
-
-
-          if (
-            posicion === -1
-          ) {
-
-            return;
-
-          }
+        const posicion=
+          linea.indexOf(":");
 
 
-          const clave =
-            linea
-              .substring(
-                0,
-                posicion
-              )
-              .trim();
+        if(posicion===-1){
 
-
-          let valor =
-            linea
-              .substring(
-                posicion + 1
-              )
-              .trim();
-
-
-          valor =
-            valor.replace(
-              /^["']|["']$/g,
-              ""
-            );
-
-
-          resultado[clave] =
-            valor;
+          return;
 
         }
-      );
+
+
+        const clave=
+          linea
+            .substring(0,posicion)
+            .trim();
+
+
+        let valor=
+          linea
+            .substring(posicion+1)
+            .trim();
+
+
+        valor=
+          valor.replace(
+            /^["']|["']$/g,
+            ""
+          );
+
+
+        resultado[clave]=valor;
+
+      });
 
   }
 
@@ -2841,56 +2315,50 @@ function leerFrontMatter(texto) {
 }
 
 
-/* =======================================================
+/* =========================================================
    CERRAR RECURSOS
-======================================================== */
+========================================================= */
 
-function cerrarRecursos() {
+function cerrarRecursos(){
 
   document
-    .querySelector(
-      ".resource-categories"
-    )
-    .style.display = "grid";
+    .querySelector(".resource-categories")
+    .style.display="grid";
 
 
   document
-    .getElementById(
-      "lista-recursos"
-    )
-    .style.display = "none";
+    .getElementById("lista-recursos")
+    .style.display="none";
 
 
   document
-    .getElementById(
-      "recursos-contenido"
-    )
-    .innerHTML = "";
+    .getElementById("recursos-contenido")
+    .innerHTML="";
 
 }
 
 
-/* =======================================================
+/* =========================================================
    CONSULTAR PRODUCTO POR WHATSAPP
-======================================================== */
+========================================================= */
 
-function consultarProducto(nombre) {
+function consultarProducto(nombre){
 
-  const mensaje =
+  const mensaje=
     encodeURIComponent(
       "Hola, quisiera consultar por el producto: "
-      + nombre
-      + "."
+      +
+      nombre
+      +
+      "."
     );
 
 
   window.open(
-
     "https://wa.me/51917913802?text="
-    + mensaje,
-
+    +
+    mensaje,
     "_blank"
-
   );
 
 }
@@ -2899,28 +2367,26 @@ function consultarProducto(nombre) {
 
 
 <!-- =======================================================
-     JAVASCRIPT - BLOG
-======================================================== -->
+     JAVASCRIPT: BLOG
+======================================================= -->
 
 <script>
 
-async function cargarBlog() {
+async function cargarBlog(){
 
-  const contenedor =
-    document.getElementById(
-      "blog-posts"
-    );
+  const contenedor=
+    document.getElementById("blog-posts");
 
 
-  try {
+  try{
 
-    const respuesta =
+    const respuesta=
       await fetch(
         "https://api.github.com/repos/centropsicologiaparalavida-cmd/psicologia-para-la-vida/contents/_posts"
       );
 
 
-    if (!respuesta.ok) {
+    if(!respuesta.ok){
 
       throw new Error(
         "No se pudieron cargar los artículos"
@@ -2929,11 +2395,11 @@ async function cargarBlog() {
     }
 
 
-    const archivos =
+    const archivos=
       await respuesta.json();
 
 
-    const posts =
+    const posts=
       archivos
 
         .filter(
@@ -2942,18 +2408,14 @@ async function cargarBlog() {
         )
 
         .sort(
-          (a, b) =>
-            b.name.localeCompare(
-              a.name
-            )
+          (a,b) =>
+            b.name.localeCompare(a.name)
         );
 
 
-    if (
-      posts.length === 0
-    ) {
+    if(posts.length===0){
 
-      contenedor.innerHTML =
+      contenedor.innerHTML=
         "<p>Aún no hay artículos publicados.</p>";
 
       return;
@@ -2961,86 +2423,82 @@ async function cargarBlog() {
     }
 
 
-    contenedor.innerHTML = "";
+    contenedor.innerHTML="";
 
 
-    for (
-      const archivo
-      of posts
-    ) {
+    for(const archivo of posts){
 
-      const respuestaPost =
+      const respuestaPost=
         await fetch(
           archivo.download_url
         );
 
 
-      const contenido =
+      const contenido=
         await respuestaPost.text();
 
 
-      const tituloMatch =
+      const tituloMatch=
         contenido.match(
           /title:\s*["']?(.*?)["']?\s*(?:\n|$)/i
         );
 
 
-      const fechaMatch =
+      const fechaMatch=
         contenido.match(
           /date:\s*["']?(.*?)["']?\s*(?:\n|$)/i
         );
 
 
-      const imagenMatch =
+      const imagenMatch=
         contenido.match(
           /image:\s*["']?(.*?)["']?\s*(?:\n|$)/i
         );
 
 
-      const titulo =
+      const titulo=
         tituloMatch
 
-        ? tituloMatch[1].trim()
+        ?
 
-        : archivo.name
-            .replace(
-              ".md",
-              ""
-            )
-            .replace(
-              /^\d{4}-\d{2}-\d{2}-/,
-              ""
-            );
+        tituloMatch[1].trim()
+
+        :
+
+        archivo.name
+          .replace(".md","")
+          .replace(
+            /^\d{4}-\d{2}-\d{2}-/,
+            ""
+          );
 
 
-      const fecha =
+      const fecha=
         fechaMatch
+        ?
+        fechaMatch[1].trim()
+        :
+        "";
 
-        ? fechaMatch[1].trim()
 
-        : "";
-
-
-      let imagen =
+      let imagen=
         imagenMatch
+        ?
+        imagenMatch[1].trim()
+        :
+        "";
 
-        ? imagenMatch[1].trim()
 
-        : "";
-
-
-      const cuerpo =
+      const cuerpo=
         contenido
-
           .replace(
             /^---[\s\S]*?---/,
             ""
           )
-
           .trim();
 
 
-      const resumen =
+      const resumen=
         cuerpo
 
           .replace(
@@ -3063,23 +2521,17 @@ async function cargarBlog() {
             " "
           )
 
-          .substring(
-            0,
-            180
-          );
+          .substring(0,180);
 
 
-      const post =
-        document.createElement(
-          "div"
-        );
+      const post=
+        document.createElement("div");
 
 
-      post.className =
-        "post";
+      post.className="post";
 
 
-      let imagenHTML = `
+      let imagenHTML=`
 
         <div class="thumb">
 
@@ -3090,9 +2542,7 @@ async function cargarBlog() {
             height:100%;
             font-size:2rem;
           ">
-
             📝
-
           </span>
 
         </div>
@@ -3100,16 +2550,22 @@ async function cargarBlog() {
       `;
 
 
-      if (imagen) {
+      if(imagen){
 
-        imagenHTML = `
+        imagenHTML=`
 
           <div class="thumb">
 
             <img
               src="${imagen}"
               alt="${titulo}"
-              loading="lazy">
+              style="
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                border-radius:12px;
+              "
+            >
 
           </div>
 
@@ -3118,18 +2574,23 @@ async function cargarBlog() {
       }
 
 
-      post.innerHTML = `
+      post.innerHTML=`
 
         ${imagenHTML}
 
 
         <div style="flex:1">
 
-          <h3>
+          <h3 style="margin:0 0 5px 0;">
 
             <a
               href="#"
-              class="abrir-articulo">
+              class="abrir-articulo"
+              style="
+                color:#718565;
+                text-decoration:none;
+                font-weight:bold;
+              ">
 
               ${titulo}
 
@@ -3141,13 +2602,15 @@ async function cargarBlog() {
           ${
             fecha
 
-            ? `
-              <small>
-                ${fecha}
-              </small>
-            `
+            ?
 
-            : ""
+            `<small>
+              ${fecha}
+            </small>`
+
+            :
+
+            ""
           }
 
 
@@ -3158,7 +2621,12 @@ async function cargarBlog() {
 
           <a
             href="#"
-            class="abrir-articulo">
+            class="abrir-articulo"
+            style="
+              color:#718565;
+              font-weight:bold;
+              text-decoration:none;
+            ">
 
             Leer artículo completo →
 
@@ -3170,218 +2638,222 @@ async function cargarBlog() {
 
 
       post
-        .querySelectorAll(
-          ".abrir-articulo"
-        )
-        .forEach(
-          enlace => {
+        .querySelectorAll(".abrir-articulo")
+        .forEach(enlace=>{
 
-            enlace.addEventListener(
-              "click",
-              function(event) {
+          enlace.addEventListener(
+            "click",
+            function(event){
 
-                event.preventDefault();
+              event.preventDefault();
 
 
-                let contenidoArticulo =
-                  cuerpo;
+              let contenidoArticulo=
+                cuerpo;
 
 
-                contenidoArticulo =
-                  contenidoArticulo
+              contenidoArticulo=
+                contenidoArticulo
 
-                    .replace(
-                      /^### (.*)$/gm,
-                      "<h3>$1</h3>"
-                    )
+                  .replace(
+                    /^### (.*)$/gm,
+                    "<h3>$1</h3>"
+                  )
 
-                    .replace(
-                      /^## (.*)$/gm,
-                      "<h2>$1</h2>"
-                    )
+                  .replace(
+                    /^## (.*)$/gm,
+                    "<h2>$1</h2>"
+                  )
 
-                    .replace(
-                      /^# (.*)$/gm,
-                      "<h1>$1</h1>"
-                    )
+                  .replace(
+                    /^# (.*)$/gm,
+                    "<h1>$1</h1>"
+                  )
 
-                    .replace(
-                      /\*\*(.*?)\*\*/g,
-                      "<strong>$1</strong>"
-                    )
+                  .replace(
+                    /\*\*(.*?)\*\*/g,
+                    "<strong>$1</strong>"
+                  )
 
-                    .replace(
-                      /\*(.*?)\*/g,
-                      "<em>$1</em>"
-                    )
+                  .replace(
+                    /\*(.*?)\*/g,
+                    "<em>$1</em>"
+                  )
 
-                    .replace(
-                      /\n\n/g,
-                      "<br><br>"
-                    )
+                  .replace(
+                    /\n\n/g,
+                    "<br><br>"
+                  )
 
-                    .replace(
-                      /\n/g,
-                      "<br>"
-                    );
-
-
-                const ventana =
-                  document.createElement(
-                    "div"
+                  .replace(
+                    /\n/g,
+                    "<br>"
                   );
 
 
-                ventana.id =
-                  "ventana-articulo";
+              const ventana=
+                document.createElement("div");
 
 
-                ventana.innerHTML = `
-
-                  <div
-                    class="article-window">
+              ventana.id=
+                "ventana-articulo";
 
 
-                    <button
-                      id="cerrar-articulo"
-                      class="article-close">
+              ventana.innerHTML=`
 
-                      ×
-
-                    </button>
+                <div class="articulo-contenido">
 
 
-                    ${
-                      imagen
+                  <button
+                    id="cerrar-articulo"
+                    class="cerrar-articulo">
 
-                      ? `
+                    ×
 
-                        <img
-                          src="${imagen}"
-                          alt="${titulo}">
-
-                      `
-
-                      : ""
-                    }
+                  </button>
 
 
-                    <h1>
-                      ${titulo}
-                    </h1>
+                  ${
+                    imagen
+
+                    ?
+
+                    `<img
+                      src="${imagen}"
+                      alt="${titulo}"
+                      style="
+                        width:100%;
+                        max-height:400px;
+                        object-fit:cover;
+                        border-radius:15px;
+                        margin-bottom:25px;
+                      "
+                    >`
+
+                    :
+
+                    ""
+                  }
 
 
-                    ${
-                      fecha
+                  <h1>
 
-                      ? `
+                    ${titulo}
 
-                        <p class="article-date">
-                          ${fecha}
-                        </p>
-
-                      `
-
-                      : ""
-                    }
+                  </h1>
 
 
-                    <div
-                      class="article-content">
+                  ${
+                    fecha
 
-                      ${contenidoArticulo}
+                    ?
 
-                    </div>
+                    `<p style="
+                      color:#777;
+                      font-size:.9rem;
+                    ">
+
+                      ${fecha}
+
+                    </p>`
+
+                    :
+
+                    ""
+                  }
 
 
-                    <div
-                      class="article-footer">
+                  <div class="articulo-cuerpo">
 
-
-                      <button
-                        id="cerrar-articulo-2">
-
-                        Cerrar artículo
-
-                      </button>
-
-
-                    </div>
+                    ${contenidoArticulo}
 
                   </div>
 
-                `;
+
+                  <div style="
+                    margin-top:35px;
+                    padding-top:20px;
+                    border-top:1px solid #e5e8df;
+                    text-align:center;
+                  ">
+
+                    <button
+                      id="cerrar-articulo-2"
+                      class="cerrar-articulo-final">
+
+                      Cerrar artículo
+
+                    </button>
+
+                  </div>
 
 
-                document.body.appendChild(
-                  ventana
-                );
+                </div>
+
+              `;
 
 
-                document
-                  .getElementById(
-                    "cerrar-articulo"
-                  )
-                  .addEventListener(
-                    "click",
-                    function() {
-
-                      ventana.remove();
-
-                    }
-                  );
+              document
+                .body
+                .appendChild(ventana);
 
 
-                document
-                  .getElementById(
-                    "cerrar-articulo-2"
-                  )
-                  .addEventListener(
-                    "click",
-                    function() {
-
-                      ventana.remove();
-
-                    }
-                  );
-
-
-                ventana.addEventListener(
+              document
+                .getElementById("cerrar-articulo")
+                .addEventListener(
                   "click",
-                  function(event) {
+                  function(){
 
-                    if (
-                      event.target === ventana
-                    ) {
-
-                      ventana.remove();
-
-                    }
+                    ventana.remove();
 
                   }
                 );
 
-              }
-            );
 
-          }
-        );
+              document
+                .getElementById("cerrar-articulo-2")
+                .addEventListener(
+                  "click",
+                  function(){
+
+                    ventana.remove();
+
+                  }
+                );
 
 
-      contenedor.appendChild(
-        post
-      );
+              ventana.addEventListener(
+                "click",
+                function(event){
+
+                  if(
+                    event.target===ventana
+                  ){
+
+                    ventana.remove();
+
+                  }
+
+                }
+              );
+
+            }
+          );
+
+        });
+
+
+      contenedor.appendChild(post);
 
     }
 
-  }
 
-  catch (error) {
+  }catch(error){
 
     console.error(error);
 
 
-    contenedor.innerHTML =
+    contenedor.innerHTML=
       "<p>No se pudieron cargar los artículos en este momento.</p>";
 
   }
