@@ -41,7 +41,6 @@ collections:
     slug: "{{slug}}"
 
     fields:
-
       - label: "Nombre del recurso"
         name: "title"
         widget: "string"
@@ -55,7 +54,7 @@ collections:
         name: "category"
         widget: "select"
         options:
-          - "Emociones"
+          - "Emociones y habilidades socioemocionales"
           - "Desarrollo cognitivo y aprendizaje"
           - "Lenguaje y comunicación"
           - "Primera infancia y estimulación"
